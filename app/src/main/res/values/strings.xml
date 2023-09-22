@@ -3,4 +3,6 @@
     <string name="work">Work</string>
     <string name="stop">Stop</string>
     <string name="forge">Forge</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>
