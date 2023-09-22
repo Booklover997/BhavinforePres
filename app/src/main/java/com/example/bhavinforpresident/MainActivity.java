@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -13,6 +14,8 @@ import org.w3c.dom.Text;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+    private int current_progress = 0;
+    private ProgressBar progressBar;
     private static Button button_start_reset;
     private TextView timer_text;
     private CountDownTimer Countdown_Timer;
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        progressBar = findViewById(R.id.progressBar);
+
 
         timer_text = findViewById(R.id.time);
         updateText();
@@ -45,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
             public void onTick(long l) {
                 millis = l;
                 updateText();
+                current_progress = current_progress +10;
+                progressBar.setProgress(current_progress);
+                progressBar.setMax(100);
             }
 
             @Override
@@ -61,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         running = false;
         millis = startTime;
         updateText();
+        progressBar.setProgress(100);
     }
     private void updateText(){
         int seconds = (int) millis/1000;
