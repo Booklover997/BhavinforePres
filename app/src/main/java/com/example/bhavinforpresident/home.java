@@ -1,75 +1,93 @@
 package com.example.bhavinforpresident;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Locale;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import java.util.Locale;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link home#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class home extends androidx.fragment.app.Fragment {
+public class home extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private int current_progress = 0;
+    private ProgressBar progressBar;
+    private Button button_start_reset;
+    private TextView timer_text;
+    private CountDownTimer Countdown_Timer;
+    private long startTime = 600000;
+    private long millis = startTime;
+    private boolean running = false;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public home() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment home.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static home newInstance(String param1, String param2) {
-
-        home fragment = new home();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        progressBar = view.findViewById(R.id.progressBar);
+        timer_text = view.findViewById(R.id.time);
+        button_start_reset = view.findViewById(R.id.button_start_reset);
+
+        updateText();
+
+        button_start_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (button_start_reset.getText().equals(getResources().getString(R.string.work))) {
+                    startTimer();
+                } else {
+                    resetTimer();
+                }
+            }
+        });
+
+        return view;
+    }
+
+    private void startTimer() {
+        button_start_reset.setText(getResources().getString(R.string.stop));
+        button_start_reset.setBackgroundColor(Color.RED);
+        Countdown_Timer = new CountDownTimer(millis, 1000) {
+            @Override
+            public void onTick(long l) {
+                millis = l;
+                updateText();
+                current_progress = current_progress + 10;
+                progressBar.setProgress(current_progress);
+                progressBar.setMax(100);
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+        running = true;
+    }
+
+    private void resetTimer() {
+        button_start_reset.setText(getResources().getString(R.string.work));
+        button_start_reset.setBackgroundColor(Color.GREEN);
+        Countdown_Timer.cancel();
+        running = false;
+        millis = startTime;
+        updateText();
+        progressBar.setProgress(100);
+    }
+
+    private void updateText() {
+        int seconds = (int) millis / 1000;
+        int min = (int) seconds / 60;
+        seconds -= min * 60;
+        timer_text.setText(String.format(Locale.getDefault(), "%02d:%02d", min, seconds));
     }
 }
