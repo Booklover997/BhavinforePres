@@ -1,81 +1,133 @@
 package com.example.bhavinforpresident;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
+import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
-    private int current_progress = 0;
-    private ProgressBar progressBar;
-    private static Button button_start_reset;
-    private TextView timer_text;
-    private CountDownTimer Countdown_Timer;
-    private long startTime = 600000;
-    private long millis = startTime;
-    private boolean running = false;
+ public class MainActivity extends AppCompatActivity {
+    private DrawerLayout mDrawer;
+    private Toolbar toolbar;
+    private NavigationView nvDrawer;
+
+    // Make sure to be using androidx.appcompat.app.ActionBarDrawerToggle version.
+    private ActionBarDrawerToggle drawerToggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        progressBar = findViewById(R.id.progressBar);
 
+        // Set a Toolbar to replace the ActionBar.
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        timer_text = findViewById(R.id.time);
-        updateText();
+        // This will display an Up icon (<-), we will replace it with hamburger later
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        button_start_reset = findViewById(R.id.button_start_reset);
-        button_start_reset.setOnClickListener(view -> {
-            if (button_start_reset.getText().equals(getResources().getString(R.string.work))){
-                startTimer();
-            }else{
-                resetTimer();
-
-            }
-        });
+        // Find our drawer view
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        nvDrawer = (NavigationView) findViewById(R.id.nvView);
+        // Setup drawer view
+        setupDrawerContent(nvDrawer);
+        selectDrawerItem();
     }
-    private void startTimer(){
-        button_start_reset.setText(getResources().getString(R.string.stop));
-        button_start_reset.setBackgroundColor(Color.RED);
-        Countdown_Timer = new CountDownTimer(millis, 1000) {
-            @Override
-            public void onTick(long l) {
-                millis = l;
-                updateText();
-                current_progress = current_progress +10;
-                progressBar.setProgress(current_progress);
-                progressBar.setMax(100);
-            }
 
-            @Override
-            public void onFinish() {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // The action bar home/up action should open or close the drawer.
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawer.openDrawer(GravityCompat.START);
+                return true;
+        }
 
-            }
-        }.start();
-        running = true;
+        return super.onOptionsItemSelected(item);
     }
-    private void resetTimer() {
-        button_start_reset.setText(getResources().getString(R.string.work));
-        button_start_reset.setBackgroundColor(Color.GREEN);
-        Countdown_Timer.cancel();
-        running = false;
-        millis = startTime;
-        updateText();
-        progressBar.setProgress(100);
-    }
-    private void updateText(){
-        int seconds = (int) millis/1000;
-        int min = (int)  seconds/60;
-        seconds -= min*60;
-        timer_text.setText(String.format(Locale.getDefault(), "%02d:%02d", min, seconds));
+     private void setupDrawerContent(NavigationView navigationView) {
+         navigationView.setNavigationItemSelectedListener(
+                 new NavigationView.OnNavigationItemSelectedListener() {
+                     @Override
+                     public boolean onNavigationItemSelected(MenuItem menuItem) {
+                         selectDrawerItem(menuItem);
+                         return true;
+                     }
+                 });
+     }
 
-    }
-}
+     public void selectDrawerItem(MenuItem menuItem) {
+         // Create a new fragment and specify the fragment to show based on nav item clicked
+         Fragment fragment = null;
+         Class fragmentClass = null;
+
+         int itemId = menuItem.getItemId(); // Get the ID of the selected menu item
+
+         if (itemId == R.id.nav_home) {
+             fragmentClass = home.class;
+         } else if (itemId == R.id.nav_map) {
+             fragmentClass = Map.class;
+         } else if (itemId == R.id.nav_craft) {
+             fragmentClass = Craft.class;
+         }
+
+         try {
+             fragment = (Fragment) fragmentClass.newInstance();
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+
+         // Insert the fragment by replacing any existing fragment
+         FragmentManager fragmentManager = getSupportFragmentManager();
+         fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
+         // Highlight the selected item as done by NavigationView
+         menuItem.setChecked(true);
+         // Set action bar title
+         setTitle(menuItem.getTitle());
+         // Close the navigation drawer
+         mDrawer.closeDrawers();
+     }
+     public void selectDrawerItem() {
+         // Create a new fragment and specify the fragment to show based on nav item clicked
+         Fragment fragment = null;
+         Class fragmentClass = null;
+
+
+         fragmentClass = home.class;
+
+
+         try {
+             fragment = (Fragment) fragmentClass.newInstance();
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+
+         // Insert the fragment by replacing any existing fragment
+         FragmentManager fragmentManager = getSupportFragmentManager();
+         fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
+         // Highlight the selected item as done by NavigationView
+         // Set action bar title
+         setTitle("Home");
+         // Close the navigation drawer
+         mDrawer.closeDrawers();
+     }
+
+ }
