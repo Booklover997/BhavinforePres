@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id ="@android:id/background">
+    <item android:id="@android:id/background">
+
         <shape android:shape="ring"
             android:thickness="20dp"
             android:useLevel="false">
-            <solid android:color="#DA3C9B"/>
+
+            <solid android:color="#D2EDFC"/>
+
         </shape>
     </item>
 
@@ -13,9 +16,12 @@
 
         <shape android:shape="ring"
             android:thickness="20dp"
-            android:useLevel="false">
-            <solid android:color="#0961ed"/>
+            android:useLevel="true">
+
+            <solid android:color="#287CF6"/>
+
         </shape>
+
     </item>
 
 </layer-list>
