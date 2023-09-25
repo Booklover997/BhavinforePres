@@ -75,7 +75,8 @@ public class home extends Fragment {
 
             @Override
             public void onFinish() {
-
+                //Make sure its full when its finished
+                    progressBar.setProgress((int)startTime/100);
             }
         }.start();
         running = true;
