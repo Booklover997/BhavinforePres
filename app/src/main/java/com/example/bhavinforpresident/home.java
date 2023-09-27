@@ -21,6 +21,8 @@ public class home extends Fragment {
     private int current_progress = 0;
     private ProgressBar progressBar;
     private Button button_start_reset;
+    private Button increase;
+    private Button decrease;
     private TextView timer_text;
     private CountDownTimer Countdown_Timer;
     private long startTime = 60000*5;
@@ -50,8 +52,24 @@ public class home extends Fragment {
                 }
             }
         });
-
+        increase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                millis+=(300*1000);
+                updateText();
+            }
+        });
+        decrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                millis-=(300*1000);
+                updateText();
+            }
+        });
         return view;
+    }
+    public void increase(){
+
     }
 
     private void startTimer() {
