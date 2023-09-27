@@ -3,12 +3,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="First" />
+            android:title="Home" />
         <item
             android:id="@+id/nav_craft"
-            android:title="Second" />
+            android:title="Craft" />
         <item
             android:id="@+id/nav_map"
-            android:title="Third" />
+            android:title="Map" />
     </group>
 </menu>

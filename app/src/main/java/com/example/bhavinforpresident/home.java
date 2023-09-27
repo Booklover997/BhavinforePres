@@ -89,7 +89,7 @@ public class home extends Fragment {
         running = false;
         millis = startTime;
         updateText();
-        progressBar.setProgress(100);
+        progressBar.setProgress(0);
         current_progress = 0;
     }
 

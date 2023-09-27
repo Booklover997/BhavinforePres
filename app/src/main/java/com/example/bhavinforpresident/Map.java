@@ -2,12 +2,18 @@ package com.example.bhavinforpresident;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.transition.AutoTransition;
+import android.transition.TransitionManager;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import androidx.cardview.widget.CardView;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Map#newInstance} factory method to
@@ -19,6 +25,13 @@ public class Map extends androidx.fragment.app.Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    ImageButton arrow_woods;
+    LinearLayout hiddenView_woods;
+    CardView cardView_woods;
+
+    ImageButton arrow_mountains;
+    LinearLayout hiddenView_mountains;
+    CardView cardView_mountains;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -56,9 +69,65 @@ public class Map extends androidx.fragment.app.Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_map, container, false);
+
+       arrow_mountains= view.findViewById(R.id.arrow_mountains);
+        hiddenView_mountains = view.findViewById(R.id.hidden_view_mountains);
+        cardView_mountains = view.findViewById(R.id.base_view_mountains);
+        arrow_woods = view.findViewById(R.id.arrow_woods);
+        hiddenView_woods = view.findViewById(R.id.hidden_view_woods);
+        cardView_woods = view.findViewById(R.id.base_view_woods);
+
+        arrow_mountains.setOnClickListener(kek ->
+        {
+            /*checks if it is alraedy expanded */
+            if (hiddenView_mountains.getVisibility()  == View.VISIBLE){
+                /*If the view is visible on click */
+                AutoTransition trans = new AutoTransition();
+                trans.setDuration(200);
+                TransitionManager.beginDelayedTransition(cardView_mountains, trans);
+                TransitionManager.beginDelayedTransition(cardView_woods, trans);
+
+                hiddenView_mountains.setVisibility(View.GONE);
+                arrow_mountains.setImageResource(R.drawable.down);
+            }
+            else{
+                AutoTransition trans = new AutoTransition();
+                trans.setDuration(200);
+                TransitionManager.beginDelayedTransition(cardView_mountains, trans);
+                TransitionManager.beginDelayedTransition(cardView_woods, trans);
+
+                hiddenView_mountains.setVisibility(View.VISIBLE);
+                arrow_mountains.setImageResource(R.drawable.up);
+            }
+        });
+        arrow_woods.setOnClickListener(hello ->
+        {
+            /*checks if it is alraedy expanded */
+            if (hiddenView_woods.getVisibility()  == View.VISIBLE){
+                /*If the view is visible on click */
+                AutoTransition trans = new AutoTransition();
+                trans.setDuration(200); //TODO: make sure that deez are good
+                TransitionManager.beginDelayedTransition(cardView_woods, trans.setDuration(75));
+                TransitionManager.beginDelayedTransition(cardView_mountains, trans.setDuration(300));
+
+                hiddenView_woods.setVisibility(View.GONE);
+                arrow_woods.setImageResource(R.drawable.down);
+            }
+            else{
+                AutoTransition trans = new AutoTransition();
+                trans.setDuration(200);
+                TransitionManager.beginDelayedTransition(cardView_woods, trans);
+                TransitionManager.beginDelayedTransition(cardView_mountains, trans);
+                hiddenView_woods.setVisibility(View.VISIBLE);
+                arrow_woods.setImageResource(R.drawable.up);
+            }
+        });
+
+
+
+        return view;    }
 }
