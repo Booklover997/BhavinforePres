@@ -7,17 +7,19 @@
     tools:context=".home"><androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <Button
         android:id="@+id/button_start_reset"
         android:layout_width="191dp"
         android:layout_height="97dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="#00FF00"
         android:text="@string/work"
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -56,5 +58,22 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:layout_editor_absoluteY="330dp"
         />
+
+    <ImageView
+        android:id="@+id/increase"
+        android:layout_width="62dp"
+        android:layout_height="84dp"
+        android:src="@drawable/up"
+        tools:layout_editor_absoluteX="264dp"
+        tools:layout_editor_absoluteY="555dp" />
+
+    <ImageView
+        android:id="@+id/decrease"
+        android:layout_width="62dp"
+        android:layout_height="84dp"
+        android:src="@drawable/down"
+        tools:layout_editor_absoluteX="264dp"
+        tools:layout_editor_absoluteY="606dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
