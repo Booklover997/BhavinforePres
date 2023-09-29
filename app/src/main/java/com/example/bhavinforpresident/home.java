@@ -23,7 +23,7 @@ public class home extends Fragment {
     private Button button_start_reset;
     private TextView timer_text;
     private CountDownTimer Countdown_Timer;
-    private long startTime = 60000;
+    private long startTime = 60000*5;
     private long millis = startTime;
     private boolean running = false;
     private int update_counter;
@@ -58,6 +58,7 @@ public class home extends Fragment {
         button_start_reset.setText(getResources().getString(R.string.stop));
         button_start_reset.setBackgroundColor(Color.RED);
         update_counter = 0;
+        actions.completeAction(getActivity().getApplicationContext(),startTime);
         Countdown_Timer = new CountDownTimer(millis, 100) {
             @Override
             public void onTick(long l) {

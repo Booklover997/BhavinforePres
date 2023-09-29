@@ -77,7 +77,7 @@
 
                 <!-- Child LinearLayout 1 -->
                 <LinearLayout
-                    android:id = "@+id/rock"
+                    android:id = "@+id/oak"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -103,7 +103,7 @@
 
                 <!-- Child LinearLayout 2 -->
                 <LinearLayout
-                    android:id = "@+id/iron"
+                    android:id = "@+id/birch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -129,7 +129,7 @@
 
                 <!-- Child LinearLayout 3 -->
                 <LinearLayout
-                    android:id = "@+id/diamond"
+                    android:id = "@+id/spruce"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -228,7 +228,7 @@
 
                 <!-- Child LinearLayout 1 -->
                 <LinearLayout
-                    android:id = "@+id/oak"
+                    android:id = "@+id/rock"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
@@ -256,7 +256,7 @@
 
                 <!-- Child LinearLayout 2 -->
                 <LinearLayout
-                    android:id = "@+id/birch"
+                    android:id = "@+id/iron"
 
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -283,7 +283,7 @@
 
                 <!-- Child LinearLayout 3 -->
                 <LinearLayout
-                    android:id = "@+id/spruce"
+                    android:id = "@+id/diamond"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
