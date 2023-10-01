@@ -3,10 +3,20 @@ package com.example.bhavinforpresident;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.room.Room;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import database.AppDatabase;
+import database.Mats;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +33,14 @@ public class Craft extends androidx.fragment.app.Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    TextView iron_text;
+    TextView rock_text;
+    TextView diamonds_text;
+    TextView oak_text;
+    TextView birch_text;
+    TextView spruce_text;
+
+
 
     public Craft() {
         // Required empty public constructor
@@ -56,9 +74,61 @@ public class Craft extends androidx.fragment.app.Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_craft, container, false);
+        View view = inflater.inflate(R.layout.fragment_craft, container, false);
+        iron_text = view.findViewById(R.id.iron_text);
+        rock_text = view.findViewById(R.id.rock_text);
+        diamonds_text = view.findViewById(R.id.diamond_text);
+        oak_text = view.findViewById(R.id.oak_text);
+        birch_text = view.findViewById(R.id.birch_text);
+        spruce_text = view.findViewById(R.id.spruce_text);
+
+        // Start a new thread to perform database operations
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").build();
+                List<Mats> mats = db.MatsDao().getAll();
+                Map<String, Integer> materialMap = new HashMap<>();
+                Log.d("Hashmap", String.valueOf(materialMap.get("Iron")));
+
+                // Iterate through the list and build the mapping
+                for (Mats material : mats) {
+                    String materialName = material.name;
+                    int materialQuantity = material.quantity;
+
+                    // Add the material name and quantity to the map
+                    materialMap.put(materialName, materialQuantity);
+                }
+
+                // Update the UI elements on the main thread
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateUI(materialMap);
+                    }
+                });
+            }
+        }).start();
+
+        return view;
     }
+
+    private void updateUI(Map<String, Integer> materialMap) {
+        // Access and set the text for each UI element using materialMap
+        iron_text.setText("x" + String.valueOf(materialMap.get("Iron")));
+        rock_text.setText("x" + String.valueOf(materialMap.get("Rock")));
+        diamonds_text.setText("x" + String.valueOf(materialMap.get("Diamond")));
+        oak_text.setText("x" + String.valueOf(materialMap.get("Oak")));
+        birch_text.setText("x" + String.valueOf(materialMap.get("Birch")));
+        spruce_text.setText("x" + String.valueOf(materialMap.get("Spruce")));
+    }
+
+
+
+
+
+
+
 }

@@ -3,8 +3,13 @@ import android.util.Log;
 import androidx.room.Room;
 import database.*;
 import android.content.Context;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.FutureTask;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class actions {
     private static Boolean set = false;
@@ -24,6 +29,45 @@ public class actions {
     public static String getDetails(){
         return details;
     }
+
+    public static Map<String, Integer> getMats(final Context context) {
+        FutureTask<Map<String, Integer>> futureTask = new FutureTask<>(new Callable<Map<String, Integer>>() {
+            @Override
+            public Map<String, Integer> call() {
+                MatsDao matsDao = idk(context);
+
+                Map<String, Integer> materialMap = new HashMap<>();
+
+                // Iterate through the list and build the mapping
+                for (Mats material : matsDao.getAll()) {
+                    String materialName = material.name;
+                    int materialQuantity = material.quantity;
+
+                    // Add the material name and quantity to the map
+                    materialMap.put(materialName, materialQuantity);
+                }
+
+                // Return the materialMap
+                return materialMap;
+            }
+        });
+
+        // Start the thread
+        new Thread(futureTask).start();
+
+        try {
+            // Wait for the thread to complete and return the result
+            return futureTask.get();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+            return null; // Handle exceptions as needed
+        }
+    }
+
+
+
+
+
     public static void completeAction(Context context, long time) {
         // Create a new thread to perform database operations
         Log.d("????", action);

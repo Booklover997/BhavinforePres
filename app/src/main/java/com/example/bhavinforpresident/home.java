@@ -59,6 +59,7 @@ public class home extends Fragment {
         button_start_reset.setBackgroundColor(Color.RED);
         update_counter = 0;
         actions.completeAction(getActivity().getApplicationContext(),startTime);
+        //TODO: Get this outa hear
         Countdown_Timer = new CountDownTimer(millis, 100) {
             @Override
             public void onTick(long l) {
@@ -78,6 +79,8 @@ public class home extends Fragment {
             public void onFinish() {
                 //Make sure its full when its finished
                     progressBar.setProgress((int)startTime/100);
+                actions.completeAction(getActivity().getApplicationContext(),startTime);
+
             }
         }.start();
         running = true;
