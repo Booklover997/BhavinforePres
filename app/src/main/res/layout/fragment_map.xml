@@ -56,11 +56,13 @@
                     android:adjustViewBounds="true"
                     android:background="#00000000"
                     android:scaleType="fitCenter"
+                    android:scaleX="0.3"
+                    android:scaleY="0.4"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/name_woods"
                     app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/down" />
+                    app:srcCompat="@drawable/down_arrow" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -89,7 +91,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -115,7 +117,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -141,7 +143,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -207,11 +209,13 @@
                     android:adjustViewBounds="true"
                     android:background="#00000000"
                     android:scaleType="fitCenter"
+                    android:scaleX="0.3"
+                    android:scaleY="0.4"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/name_mountains"
                     app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/down" />
+                    app:srcCompat="@drawable/down_arrow" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -242,7 +246,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -269,7 +273,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -295,7 +299,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -361,11 +365,13 @@
                     android:adjustViewBounds="true"
                     android:background="#00000000"
                     android:scaleType="fitCenter"
+                    android:scaleX="0.3"
+                    android:scaleY="0.4"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/name_caves"
                     app:layout_constraintVertical_bias="1.0"
-                    app:srcCompat="@drawable/down" />
+                    app:srcCompat="@drawable/down_arrow" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -394,7 +400,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -420,7 +426,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -446,7 +452,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:src="@drawable/down" />
+                        android:src="@drawable/down_arrow" />
 
                     <TextView
                         android:layout_width="wrap_content"

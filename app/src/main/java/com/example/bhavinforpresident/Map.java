@@ -197,7 +197,7 @@ public class Map extends androidx.fragment.app.Fragment {
                 TransitionManager.beginDelayedTransition(cardView_caves, trans.setDuration(500));
 
                 hiddenView_mountains.setVisibility(View.GONE);
-                arrow_mountains.setImageResource(R.drawable.down);
+                arrow_mountains.setImageResource(R.drawable.decreasedown);
             }
             else{
                 AutoTransition trans = new AutoTransition();
@@ -221,7 +221,7 @@ public class Map extends androidx.fragment.app.Fragment {
                 TransitionManager.beginDelayedTransition(cardView_caves, trans);
 
                 hiddenView_woods.setVisibility(View.GONE);
-                arrow_woods.setImageResource(R.drawable.down);
+                arrow_woods.setImageResource(R.drawable.decreasedown);
             }
             else{
                 AutoTransition trans = new AutoTransition();
@@ -246,7 +246,7 @@ public class Map extends androidx.fragment.app.Fragment {
                 TransitionManager.beginDelayedTransition(cardView_caves, trans);
 
                 hiddenView_caves.setVisibility(View.GONE);
-                arrow_caves.setImageResource(R.drawable.down);
+                arrow_caves.setImageResource(R.drawable.decreasedown);
             }
             else{
                 AutoTransition trans = new AutoTransition();
