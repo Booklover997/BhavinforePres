@@ -180,7 +180,7 @@
         <ScrollView
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="400dp"
             android:background="#0F0F00"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -273,8 +273,7 @@
                             app:layout_constraintHorizontal_bias="0.294"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="1.0">
-                        </ImageView>
+                            app:layout_constraintVertical_bias="1.0"></ImageView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
