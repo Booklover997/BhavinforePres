@@ -478,7 +478,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Diamond_Sword"
+                    android:id="@+id/diamond_sword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -596,7 +596,7 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintHorizontal_bias="0.473"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Diamond_Sword"
+                    app:layout_constraintTop_toBottomOf="@+id/diamond_sword"
                     app:layout_constraintVertical_bias="0.060000002">
 
                     <androidx.constraintlayout.widget.ConstraintLayout

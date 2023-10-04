@@ -1,7 +1,9 @@
 package com.example.bhavinforpresident;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.room.Room;
 
@@ -40,6 +42,11 @@ public class Craft extends androidx.fragment.app.Fragment {
     TextView birch_text;
     TextView spruce_text;
 
+    private CardView table;
+    private CardView wood_sword;
+    private CardView iron_sword;
+    private CardView diamond_sword;
+    private CardView chair;
 
 
     public Craft() {
@@ -83,6 +90,46 @@ public class Craft extends androidx.fragment.app.Fragment {
         oak_text = view.findViewById(R.id.oak_text);
         birch_text = view.findViewById(R.id.birch_text);
         spruce_text = view.findViewById(R.id.spruce_text);
+        CardView table = view.findViewById(R.id.table);
+        CardView wood_sword = view.findViewById(R.id.wood_sword);
+        CardView iron_sword = view.findViewById(R.id.steel_Sword);
+        CardView diamond_sword = view.findViewById(R.id.diamond_sword);
+        CardView chair = view.findViewById(R.id.chair);
+
+        //make change color on click for a recipe and set action
+        table.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+            table.setBackgroundColor(Color.RED);
+        });
+
+        wood_sword.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+                wood_sword.setBackgroundColor(Color.RED);
+
+
+        });
+
+        iron_sword.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+
+                iron_sword.setBackgroundColor(Color.RED);
+
+
+        });
+
+        diamond_sword.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+
+                diamond_sword.setBackgroundColor(Color.RED);
+
+        });
+
+        chair.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+
+                chair.setBackgroundColor(Color.RED);
+
+        });
 
         // Start a new thread to perform database operations
         new Thread(new Runnable() {
@@ -124,11 +171,20 @@ public class Craft extends androidx.fragment.app.Fragment {
         birch_text.setText("x" + String.valueOf(materialMap.get("Birch")));
         spruce_text.setText("x" + String.valueOf(materialMap.get("Spruce")));
     }
-
-
-
-
-
+    private void resetColors(CardView table, CardView wood_sword, CardView iron_sword, CardView diamond_sword, CardView chair) {
+        table.setBackgroundColor(Color.WHITE);
+        wood_sword.setBackgroundColor(Color.WHITE);
+        iron_sword.setBackgroundColor(Color.WHITE);
+        diamond_sword.setBackgroundColor(Color.WHITE);
+        chair.setBackgroundColor(Color.WHITE);
+    }
 
 
 }
+
+
+
+
+
+
+

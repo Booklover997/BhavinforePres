@@ -103,7 +103,7 @@
 
                 <!-- Child LinearLayout 2 -->
                 <LinearLayout
-                    android:id = "@+id/iron"
+                    android:id = "@+id/birch"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">

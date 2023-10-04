@@ -117,8 +117,8 @@ public class Map extends androidx.fragment.app.Fragment {
         diamond = view.findViewById(R.id.diamond);
 
         oak =view.findViewById((R.id.oak));
-        birch =view.findViewById((R.id.iron));
-        spruce = view.findViewById(R.id.iron);
+        birch =view.findViewById((R.id.birch));
+        spruce = view.findViewById(R.id.spruce);
 
         upper_level =view.findViewById((R.id.upper_levels));
         mid_level =view.findViewById((R.id.mid_level));
