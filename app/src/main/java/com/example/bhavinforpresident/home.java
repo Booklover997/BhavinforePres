@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -21,6 +22,8 @@ public class home extends Fragment {
     private int current_progress = 0;
     private ProgressBar progressBar;
     private Button button_start_reset;
+    private ImageButton increaseup;
+    private ImageButton decreasedown;
     private TextView timer_text;
     private CountDownTimer Countdown_Timer;
     private long startTime = 60000*5;
@@ -37,6 +40,8 @@ public class home extends Fragment {
         progressBar = view.findViewById(R.id.progressBar);
         timer_text = view.findViewById(R.id.time);
         button_start_reset = view.findViewById(R.id.button_start_reset);
+        increaseup = view.findViewById(R.id.increaseup);
+        decreasedown = view.findViewById(R.id.decreasedown);
 
         updateText();
 
@@ -48,6 +53,22 @@ public class home extends Fragment {
                 } else {
                     resetTimer();
                 }
+            }
+        });
+
+        decreasedown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                millis-=300000;
+                updateText();
+            }
+        });
+
+        increaseup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                millis+=300000;
+                updateText();
             }
         });
 
