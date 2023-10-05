@@ -63,12 +63,12 @@
             android:id="@+id/increaseup"
             android:layout_width="81dp"
             android:layout_height="122dp"
-            android:layout_marginBottom="140dp"
+            android:layout_marginBottom="144dp"
             android:background="#00FFFFFF"
             android:src="@drawable/increase_up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.754"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
@@ -76,12 +76,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="68dp"
-            android:layout_marginBottom="164dp"
+            android:layout_marginBottom="168dp"
             android:background="#00FFFFFF"
             android:src="@drawable/dercease_down"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton"
-            app:layout_constraintHorizontal_bias="0.591"
+            app:layout_constraintEnd_toStartOf="@+id/decreasedown"
+            app:layout_constraintHorizontal_bias="0.049"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
