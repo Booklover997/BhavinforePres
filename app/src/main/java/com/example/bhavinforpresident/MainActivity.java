@@ -15,14 +15,20 @@ import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
 
 import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
- public class MainActivity extends AppCompatActivity {
+import database.AppDatabase;
+import database.Mats;
+
+public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
@@ -33,6 +39,36 @@ import java.util.Locale;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+        // Create a list of material names
+        List<String> materialNames = Arrays.asList("Oak", "Birch", "Spruce", "Iron", "Stone", "Diamond");
+
+// Start a new thread to perform database operations
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Initialize the Room database
+                AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Mats").build();
+
+                // Iterate through the list of material names
+                for (String materialName : materialNames) {
+                    // Check if the material already exists in the database
+                    Mats existingMaterial = db.MatsDao().getMatsByName(materialName);
+
+                    if (existingMaterial == null) {
+                        // Material does not exist, so insert it with quantity 0
+                        Mats newMaterial = new Mats();
+                        newMaterial.quantity = 0;
+                        newMaterial.name = materialName;
+                        db.MatsDao().insert(newMaterial);
+                    }
+                }
+
+            }
+        }).start();
+
         setContentView(R.layout.activity_main);
 
         // Set a Toolbar to replace the ActionBar.

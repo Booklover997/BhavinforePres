@@ -85,7 +85,7 @@ public class Craft extends androidx.fragment.app.Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_craft, container, false);
         iron_text = view.findViewById(R.id.iron_text);
-        rock_text = view.findViewById(R.id.rock_text);
+        rock_text = view.findViewById(R.id.stone_text);
         diamonds_text = view.findViewById(R.id.diamond_text);
         oak_text = view.findViewById(R.id.oak_text);
         birch_text = view.findViewById(R.id.birch_text);
@@ -165,7 +165,7 @@ public class Craft extends androidx.fragment.app.Fragment {
     private void updateUI(Map<String, Integer> materialMap) {
         // Access and set the text for each UI element using materialMap
         iron_text.setText("x" + String.valueOf(materialMap.get("Iron")));
-        rock_text.setText("x" + String.valueOf(materialMap.get("Rock")));
+        rock_text.setText("x" + String.valueOf(materialMap.get("Stone")));
         diamonds_text.setText("x" + String.valueOf(materialMap.get("Diamond")));
         oak_text.setText("x" + String.valueOf(materialMap.get("Oak")));
         birch_text.setText("x" + String.valueOf(materialMap.get("Birch")));
