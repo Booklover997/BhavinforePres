@@ -22,6 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 import org.w3c.dom.Text;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -42,10 +43,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // Create a list of material names
-        List<String> materialNames = Arrays.asList("Oak", "Birch", "Spruce", "Iron", "Stone", "Diamond");
+            List<Mats> mats = Arrays.asList(
+                    actions.makeMats("Oak", "none", 0, "none", 0),
+                    actions.makeMats("Birch", "none", 0, "none", 0),
+                    actions.makeMats("Spruce", "none", 0, "none", 0),
+                    actions.makeMats("Iron", "none", 0, "none", 0),
+                    actions.makeMats("Stone", "none", 0, "none", 0),
+                    actions.makeMats("Diamond", "none", 0, "none", 0),
+                    actions.makeMats("Wood_Sword", "Oak", 4, "none", 0),
+                    actions.makeMats("Stone_Sword", "Birch", 2, "Stone", 2),
+                    actions.makeMats("Iron_Sword", "Spruce", 2, "Iron", 2),
+                    actions.makeMats("Diamond_Sword", "Oak", 2, "Diamond", 2),
+                    actions.makeMats("Table", "Oak", 6, "none", 0),
+                    actions.makeMats("Chair", "Birch", 4, "none", 0),
+                    actions.makeMats("Furnace", "none", 2, "none", 4),
+                    actions.makeMats("Door", "Spruce", 2, "Stone", 4));
 
-// Start a new thread to perform database operations
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -53,16 +67,13 @@ public class MainActivity extends AppCompatActivity {
                 AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Mats").build();
 
                 // Iterate through the list of material names
-                for (String materialName : materialNames) {
+                for (Mats mat : mats) {
                     // Check if the material already exists in the database
-                    Mats existingMaterial = db.MatsDao().getMatsByName(materialName);
+                    Mats existingMaterial = db.MatsDao().getMatsByName(mat.name);
 
                     if (existingMaterial == null) {
                         // Material does not exist, so insert it with quantity 0
-                        Mats newMaterial = new Mats();
-                        newMaterial.quantity = 0;
-                        newMaterial.name = materialName;
-                        db.MatsDao().insert(newMaterial);
+                        db.MatsDao().insert(mat);
                     }
                 }
 

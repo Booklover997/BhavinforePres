@@ -15,4 +15,17 @@ public class Mats {
     @ColumnInfo(name = "quantity")
     public int quantity;
 
+    @ColumnInfo(name = "wood_type")
+    public String wood;
+
+    @ColumnInfo(name = "mineral_type")
+    public String mineral;
+
+    @ColumnInfo(name="wood_quantity")
+    public int wood_quantity;
+
+    @ColumnInfo(name="mineral_quantity")
+    public int mineral_quantity;
+
+
 }

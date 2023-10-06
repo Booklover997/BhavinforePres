@@ -25,7 +25,7 @@ import database.Mats;
  * Use the {@link Craft#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Craft extends androidx.fragment.app.Fragment {
+public class  Craft extends androidx.fragment.app.Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

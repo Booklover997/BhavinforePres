@@ -69,7 +69,6 @@ public class actions {
 
 
     public static void completeAction(Context context, long time) {
-        // Create a new thread to perform database operations
         Log.d("????", action);
         if (action.equals("Explore")) {
             new Thread(new Runnable() {
@@ -90,14 +89,42 @@ public class actions {
                         Log.d("Material Quanitity", " " + material.quantity);
                     }
 
-                    // You can update UI or perform other actions with the retrieved data here.
-                }
+            }
             }).start();
 
         }
         if (action.equals("Craft")) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
 
+                    MatsDao matsDao = idk(context);
+                    Mats mat = matsDao.getMatsByName(details);
+                    Log.d("Chosen Mat", mat.name);
+                    mat.quantity += (int) time/300000;
+                    matsDao.update(mat);
+                    List<Mats> mats = matsDao.getAll();
+
+
+                    for (Mats material : mats) {
+                        String materialName = material.name;
+                        Log.d("Material Name", materialName);
+                        Log.d("Material Quanitity", " " + material.quantity);
+                    }
+
+              }
+            }).start();
         }
+        }
+        public static Mats makeMats(String name, String wood_type, int wood_quantity, String rock_type, int rock_quantity ){
+            Mats mat = new Mats();
+            mat.name = name;
+            mat.wood = wood_type;
+            mat.wood_quantity = wood_quantity;
+            mat.mineral = rock_type;
+            mat.mineral_quantity = rock_quantity;
+            mat.quantity = 0;
+            return mat;
         }
 
 

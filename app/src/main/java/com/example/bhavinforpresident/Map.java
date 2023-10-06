@@ -235,7 +235,6 @@ public class Map extends androidx.fragment.app.Fragment {
         });
 
 
-
         arrow_caves.setOnClickListener(hello ->
         {
             /*checks if it is alraedy expanded */
