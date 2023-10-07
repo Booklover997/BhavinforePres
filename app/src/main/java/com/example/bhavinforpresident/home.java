@@ -59,16 +59,20 @@ public class home extends Fragment {
         decreasedown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                millis-=300000;
-                updateText();
+                if (millis>0) {
+                    millis -= 300000;
+                    startTime -= 300000;
+                    updateText();
+                }
             }
         });
 
         increaseup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                millis+=300000;
-                updateText();
+                    millis += 300000;
+                    startTime += 300000;
+                    updateText();
             }
         });
 
