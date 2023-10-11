@@ -126,7 +126,7 @@ public class Map extends androidx.fragment.app.Fragment {
 
         rock.setOnClickListener(obj->{
             actions.setAction("Explore");
-            actions.setDetails("Rock");
+            actions.setDetails("Stone");
             resetBackgroundColor();
             rock.setBackgroundColor(Color.parseColor("#FF5733"));
         });

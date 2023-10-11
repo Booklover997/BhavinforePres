@@ -67,13 +67,15 @@ public class MainActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                //fallbackToDestructiveMigration destroys old database when changes made
                 // Initialize the Room database
-                AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Mats").build();
+                AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "Mats").fallbackToDestructiveMigration()
+                        .build();
 
                 // Iterate through the list of material names
                 for (Mats mat : mats) {
                     // Check if the material already exists in the database
-                    Mats existingMaterial = db.MatsDao().getMatsByName(mat.name);
+                    Mats existingMaterial = db.MatsDao().getMatsByName(mat.mat_name);
 
                     if (existingMaterial == null) {
                         // Material does not exist, so insert it with quantity 0

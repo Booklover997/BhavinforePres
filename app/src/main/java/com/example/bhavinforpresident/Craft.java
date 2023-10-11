@@ -100,12 +100,15 @@ public class  Craft extends androidx.fragment.app.Fragment {
         table.setOnClickListener(l-> {
             resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
             table.setBackgroundColor(Color.RED);
+            actions.setDetails("Table");
+            actions.setAction("Craft");
         });
 
         wood_sword.setOnClickListener(l-> {
             resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
                 wood_sword.setBackgroundColor(Color.RED);
-
+            actions.setDetails("Wood_Sword");
+            actions.setAction("Craft");
 
         });
 
@@ -113,7 +116,8 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
 
                 iron_sword.setBackgroundColor(Color.RED);
-
+            actions.setDetails("Iron_Sword");
+            actions.setAction("Craft");
 
         });
 
@@ -121,6 +125,8 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
 
                 diamond_sword.setBackgroundColor(Color.RED);
+                actions.setDetails("Diamond_Sword");
+                actions.setAction("Craft");
 
         });
 
@@ -128,6 +134,8 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
 
                 chair.setBackgroundColor(Color.RED);
+            actions.setDetails("Chair");
+            actions.setAction("Craft");
 
         });
 
@@ -142,7 +150,7 @@ public class  Craft extends androidx.fragment.app.Fragment {
 
                 // Iterate through the list and build the mapping
                 for (Mats material : mats) {
-                    String materialName = material.name;
+                    String materialName = material.mat_name;
                     int materialQuantity = material.quantity;
 
                     // Add the material name and quantity to the map

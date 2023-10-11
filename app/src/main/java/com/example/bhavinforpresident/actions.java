@@ -16,6 +16,7 @@ public class actions {
     //Can be set to craft, sell, or explore
     private static String action = "none";
     private static String details = "nada";
+    private static int tInterval = 60000*5;
     public static void setAction(String action_to_set){
         action = action_to_set;
     }
@@ -40,7 +41,7 @@ public class actions {
 
                 // Iterate through the list and build the mapping
                 for (Mats material : matsDao.getAll()) {
-                    String materialName = material.name;
+                    String materialName = material.mat_name;
                     int materialQuantity = material.quantity;
 
                     // Add the material name and quantity to the map
@@ -77,14 +78,13 @@ public class actions {
 
                     MatsDao matsDao = idk(context);
                     Mats mat = matsDao.getMatsByName(details);
-                    Log.d("Chosen Mat", mat.name);
-                    mat.quantity += (int) time/300000;
+                    mat.quantity += (int) time/tInterval;
                     matsDao.update(mat);
                     List<Mats> mats = matsDao.getAll();
 
 
                     for (Mats material : mats) {
-                        String materialName = material.name;
+                        String materialName = material.mat_name;
                         Log.d("Material Name", materialName);
                         Log.d("Material Quanitity", " " + material.quantity);
                     }
@@ -100,28 +100,44 @@ public class actions {
 
                     MatsDao matsDao = idk(context);
                     Mats mat = matsDao.getMatsByName(details);
-                    Log.d("Chosen Mat", mat.name);
-                    mat.quantity += (int) time/300000;
+                    //Get the actual quantites of the resources that are required
+                        Mats wood = matsDao.getMatsByName(mat.wood_type);
+                        Log.d("wood", wood.mat_name);
+
+                        Mats rock  = matsDao.getMatsByName(mat.wood_type);
+
+
+                    for (int i=0; i< (int) time/tInterval; i++){
+                        //Check to see fit the quantites match or exceed the resources required or are "none" short circuiting the boolean statement  cc
+                        if ((mat.wood_type=="none" || wood.quantity>=mat.wood_quantity) && (mat.mineral_type == "none" || rock.quantity >= mat.mineral_quantity)) {
+                            mat.quantity += 1;
+                            wood.quantity-=mat.wood_quantity;
+                            rock.quantity -= mat.mineral_quantity;
+
+                        }
+                        }
+                    matsDao.update(rock);
                     matsDao.update(mat);
+                    matsDao.update(wood);
                     List<Mats> mats = matsDao.getAll();
 
 
                     for (Mats material : mats) {
-                        String materialName = material.name;
+                        String materialName = material.mat_name;
                         Log.d("Material Name", materialName);
                         Log.d("Material Quanitity", " " + material.quantity);
                     }
-
               }
             }).start();
         }
         }
+
         public static Mats makeMats(String name, String wood_type, int wood_quantity, String rock_type, int rock_quantity ){
             Mats mat = new Mats();
-            mat.name = name;
-            mat.wood = wood_type;
+            mat.mat_name = name;
+            mat.wood_type = wood_type;
             mat.wood_quantity = wood_quantity;
-            mat.mineral = rock_type;
+            mat.mineral_type = rock_type;
             mat.mineral_quantity = rock_quantity;
             mat.quantity = 0;
             return mat;

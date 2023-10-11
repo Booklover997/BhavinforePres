@@ -10,16 +10,16 @@ public class Mats {
     public int id;
 
     @ColumnInfo(name = "mat_name")
-    public String name;
+    public String mat_name;
 
     @ColumnInfo(name = "quantity")
     public int quantity;
 
     @ColumnInfo(name = "wood_type")
-    public String wood;
+    public String wood_type;
 
     @ColumnInfo(name = "mineral_type")
-    public String mineral;
+    public String mineral_type;
 
     @ColumnInfo(name="wood_quantity")
     public int wood_quantity;
