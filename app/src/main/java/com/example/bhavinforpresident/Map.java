@@ -50,6 +50,8 @@ public class Map extends androidx.fragment.app.Fragment {
     LinearLayout upper_level;
     LinearLayout mid_level;
     LinearLayout lower_level;
+    LinearLayout gold;
+    LinearLayout redwood;
 
 
 
@@ -115,10 +117,12 @@ public class Map extends androidx.fragment.app.Fragment {
         rock =view.findViewById((R.id.rock));
         iron =view.findViewById((R.id.iron));
         diamond = view.findViewById(R.id.diamond);
+        gold = view.findViewById(R.id.gold);
 
         oak =view.findViewById((R.id.oak));
         birch =view.findViewById((R.id.birch));
         spruce = view.findViewById(R.id.spruce);
+        redwood = view.findViewById(R.id.redwood);
 
         upper_level =view.findViewById((R.id.upper_levels));
         mid_level =view.findViewById((R.id.mid_level));
@@ -135,6 +139,12 @@ public class Map extends androidx.fragment.app.Fragment {
             actions.setDetails("Iron");
             resetBackgroundColor();
             iron.setBackgroundColor(Color.parseColor("#FF5733")); // Set the background color
+        });
+        gold.setOnClickListener(obj->{
+            actions.setAction("Explore");
+            actions.setDetails("Gold");
+            resetBackgroundColor();
+            gold.setBackgroundColor(Color.parseColor("#FF5733"));
         });
 
         diamond.setOnClickListener(obj -> {
@@ -164,6 +174,12 @@ public class Map extends androidx.fragment.app.Fragment {
             resetBackgroundColor();
             spruce.setBackgroundColor(Color.parseColor("#FF5733")); // Set the background color
         });
+        redwood.setOnClickListener(obj->{
+        actions.setAction("Explore");
+        actions.setDetails("Redwood");
+        resetBackgroundColor();
+        redwood.setBackgroundColor(Color.parseColor("#FF5733"));
+    });
 
         upper_level.setOnClickListener(obj -> {
             actions.setAction("Explore");
@@ -268,15 +284,17 @@ public class Map extends androidx.fragment.app.Fragment {
         return view;    }
 
     private void resetBackgroundColor() {
-        int defaultBackgroundColor = Color.TRANSPARENT; // Set this to the default background color you want
+        int defaultBackgroundColor = Color.TRANSPARENT; // Set this to the default background is transparent so that card background is seen
 
         // Reset the background color for each view
         rock.setBackgroundColor(defaultBackgroundColor);
         iron.setBackgroundColor(defaultBackgroundColor);
+        gold.setBackgroundColor(defaultBackgroundColor);
         diamond.setBackgroundColor(defaultBackgroundColor);
         oak.setBackgroundColor(defaultBackgroundColor);
         birch.setBackgroundColor(defaultBackgroundColor);
         spruce.setBackgroundColor(defaultBackgroundColor);
+        redwood.setBackgroundColor(defaultBackgroundColor);
         upper_level.setBackgroundColor(defaultBackgroundColor);
         mid_level.setBackgroundColor(defaultBackgroundColor);
         lower_level.setBackgroundColor(defaultBackgroundColor);

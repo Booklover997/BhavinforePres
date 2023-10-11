@@ -58,11 +58,13 @@ public class MainActivity extends AppCompatActivity {
                     actions.makeMats("Stone_Sword", "Birch", 2, "Stone", 2),
                     actions.makeMats("Iron_Sword", "Spruce", 2, "Iron", 2),
                     actions.makeMats("Diamond_Sword", "Oak", 2, "Diamond", 2),
-                    actions.makeMats("Table", "Oak", 6, "none", 0),
-                    actions.makeMats("Chair", "Birch", 4, "none", 0),
-                    actions.makeMats("Furnace", "none", 2, "none", 4),
-                    actions.makeMats("Door", "Spruce", 2, "Stone", 4));
-
+                    actions.makeMats("Table", "Oak", 4, "none", 0),
+                    actions.makeMats("Chair", "Birch", 2, "stone", 2),
+                    actions.makeMats("Furnace", "Spruce", 2, "stone", 2),
+                    actions.makeMats("Door", "Spruce", 2, "Stone", 4),
+                    actions.makeMats("Luxury Table", "Oak", 4, "Diamond", 1),
+                    actions.makeMats("Luxury Chair", "Birch", 4, "iron", 2),
+                    actions.makeMats("Oven", "Spruce", 4, "stone", 4));
 
         new Thread(new Runnable() {
             @Override
