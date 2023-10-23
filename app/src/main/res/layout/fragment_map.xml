@@ -95,7 +95,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/oak" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -121,7 +121,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/birch" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -147,7 +147,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/spruce" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -272,7 +272,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/rock__1_" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -299,7 +299,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/iron__1_" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -325,7 +325,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/gold__1_" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -351,7 +351,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/diamond__1_" />
 
                         <TextView
                             android:layout_width="wrap_content"
