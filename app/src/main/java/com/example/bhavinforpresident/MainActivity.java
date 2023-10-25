@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView nvDrawer;
 
-    // Make sure to be using androidx.appcompat.app.ActionBarDrawerToggle version.
     private ActionBarDrawerToggle drawerToggle;
 
     @Override
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     Mats existingMaterial = db.MatsDao().getMatsByName(mat.mat_name);
 
                     if (existingMaterial == null) {
-                        // Material does not exist, so insert it with quantity 0
+                        // Material does not exist, so insert it with quantity 0 which is set in the mats class
                         db.MatsDao().insert(mat);
                     }
                 }

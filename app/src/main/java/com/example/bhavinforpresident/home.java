@@ -3,6 +3,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.room.Room;
+import database.AppDatabase;
+import database.Mats;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import database.AppDatabase;
+import database.Mats;
 
 public class home extends Fragment {
 
@@ -30,6 +40,7 @@ public class home extends Fragment {
     private long millis = startTime;
     private boolean running = false;
     private int update_counter;
+    private TextView moneytext;
 
     @Nullable
     @Override
@@ -42,8 +53,10 @@ public class home extends Fragment {
         button_start_reset = view.findViewById(R.id.button_start_reset);
         increaseup = view.findViewById(R.id.increaseup);
         decreasedown = view.findViewById(R.id.decreasedown);
+        moneytext = view.findViewById(R.id.money_text);
 
         updateText();
+
 
         button_start_reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +89,24 @@ public class home extends Fragment {
             }
         });
 
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").build();
+                Mats mats = db.MatsDao().getMatsByName("Money");
+
+
+                // Update the UI elements on the main thread
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        moneytext.setText(""+mats.quantity);
+                    }
+                });
+            }
+
+        }).start();
         return view;
     }
 

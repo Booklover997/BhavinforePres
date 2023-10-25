@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
 
         <Button
             android:id="@+id/button_start_reset"
@@ -39,10 +40,11 @@
             android:layout_height="wrap_content"
             android:text="10:00"
             android:textSize="70sp"
-            app:layout_constraintBottom_toTopOf="@+id/button_start_reset"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar"
+            app:layout_constraintVertical_bias="0.471" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -57,34 +59,36 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.494" />
+            app:layout_constraintVertical_bias="0.113" />
 
         <ImageButton
             android:id="@+id/increaseup"
-            android:layout_width="81dp"
-            android:layout_height="122dp"
-            android:layout_marginBottom="144dp"
+            android:layout_width="84dp"
+            android:layout_height="118dp"
             android:background="#00FFFFFF"
-            android:src="@drawable/increase_up"
+            android:src="@drawable/slice_2__2_"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.754"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.828"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar"
+            app:layout_constraintVertical_bias="0.188" />
 
         <ImageButton
             android:id="@+id/decreasedown"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="68dp"
-            android:layout_marginBottom="180dp"
+            android:layout_width="83dp"
+            android:layout_height="121dp"
             android:background="#00FFFFFF"
-            android:src="@drawable/dercease_down"
+            android:src="@drawable/slice_3"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/decreasedown"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/increaseup"
+            app:layout_constraintHorizontal_bias="0.297"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar"
+            app:layout_constraintVertical_bias="0.19" />
 
         <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
             android:layout_width="409dp"
             android:layout_height="193dp"
             app:layout_constraintBottom_toTopOf="@+id/progressBar"
@@ -97,6 +101,26 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical" />
         </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/money_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/oney"
+            android:layout_width="54dp"
+            android:layout_height="45dp"
+            android:src="@drawable/coin__1_"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/money_text"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
