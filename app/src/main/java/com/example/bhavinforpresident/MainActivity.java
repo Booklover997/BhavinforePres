@@ -66,7 +66,9 @@ public class MainActivity extends AppCompatActivity {
                     actions.makeMats("Door", "Spruce", 2, "Stone", 4),
                     actions.makeMats("Luxury Table", "Oak", 4, "Diamond", 1),
                     actions.makeMats("Luxury Chair", "Birch", 4, "iron", 2),
-                    actions.makeMats("Oven", "Spruce", 4, "stone", 4));
+                    actions.makeMats("Oven", "Spruce", 4, "stone", 4),
+                    actions.makeMats("Money", "none", 0, "none", 0)
+            );
 
         new Thread(new Runnable() {
             @Override

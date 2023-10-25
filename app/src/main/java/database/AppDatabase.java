@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase;
 
 
 //Increment version number when changes are made to Mats class
-@Database(entities = {Mats.class}, version = 3)
+@Database(entities = {Mats.class}, version = 4)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract MatsDao MatsDao();
 }
