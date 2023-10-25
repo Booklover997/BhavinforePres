@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E4E3E3"
+        android:background="#FFFFFF"
         tools:context=".Map">
 
         <androidx.cardview.widget.CardView
@@ -17,13 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            app:cardBackgroundColor="#A2FF88"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.021"
-            app:cardBackgroundColor="#A2FF88">
+            app:layout_constraintVertical_bias="0.021">
 
             <!-- The constraint layout for the whole card -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,7 +43,7 @@
                     TaskViewHolder changes the icon based on whether the card is expanded. -->
 
                     <TextView
-                        android:id = "@+id/name_woods"
+                        android:id="@+id/name_woods"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start|center_vertical"
@@ -83,7 +83,7 @@
 
                     <!-- Child LinearLayout 1 -->
                     <LinearLayout
-                        android:id = "@+id/oak"
+                        android:id="@+id/oak"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -109,7 +109,7 @@
 
                     <!-- Child LinearLayout 2 -->
                     <LinearLayout
-                        android:id = "@+id/birch"
+                        android:id="@+id/birch"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -135,7 +135,7 @@
 
                     <!-- Child LinearLayout 3 -->
                     <LinearLayout
-                        android:id = "@+id/spruce"
+                        android:id="@+id/spruce"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -158,8 +158,9 @@
                             android:textColor="#000000"
                             android:textSize="20dp" />
                     </LinearLayout>
+
                     <LinearLayout
-                        android:id = "@+id/redwood"
+                        android:id="@+id/redwood"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -188,6 +189,7 @@
 
 
         <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="#5d55"
             android:id="@+id/base_view_mountains"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -258,7 +260,7 @@
 
                     <!-- Child LinearLayout 1 -->
                     <LinearLayout
-                        android:id = "@+id/rock"
+                        android:id="@+id/rock"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
@@ -286,7 +288,7 @@
 
                     <!-- Child LinearLayout 2 -->
                     <LinearLayout
-                        android:id = "@+id/iron"
+                        android:id="@+id/iron"
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -312,7 +314,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id = "@+id/gold"
+                        android:id="@+id/gold"
 
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -339,7 +341,7 @@
 
                     <!-- Child LinearLayout 3 -->
                     <LinearLayout
-                        android:id = "@+id/diamond"
+                        android:id="@+id/diamond"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -368,6 +370,8 @@
 
 
         <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="#5D5555"
+
             android:id="@+id/base_view_caves"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -438,7 +442,7 @@
 
                     <!-- Child LinearLayout 1 -->
                     <LinearLayout
-                        android:id = "@+id/upper_levels"
+                        android:id="@+id/upper_levels"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -464,7 +468,7 @@
 
                     <!-- Child LinearLayout 2 -->
                     <LinearLayout
-                        android:id = "@+id/mid_level"
+                        android:id="@+id/mid_level"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -490,7 +494,7 @@
 
                     <!-- Child LinearLayout 3 -->
                     <LinearLayout
-                        android:id = "@+id/lower_level"
+                        android:id="@+id/lower_level"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -511,8 +515,7 @@
                             android:layout_marginTop="20dp"
                             android:text="Lower Levels"
                             android:textColor="#000000"
-                            android:textSize="20dp"
-                            />
+                            android:textSize="20dp" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>

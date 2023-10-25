@@ -45,16 +45,6 @@
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/guidecircle"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
 
                 <TextView
                     android:id="@+id/stone_text"
@@ -308,6 +298,14 @@
                     app:layout_constraintTop_toTopOf="@+id/imageView10" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/guidecircle"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="87dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
