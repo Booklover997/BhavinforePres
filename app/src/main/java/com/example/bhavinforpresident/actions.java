@@ -14,7 +14,7 @@ import java.util.Map;
 public class actions {
     private static Boolean set = false;
     //Can be set to craft, sell, or explore
-    private static String action = "none";
+    private static String action = "Sell";
     private static String details = "nada";
     private static int tInterval = 60000*5;
     public static void setAction(String action_to_set){
@@ -130,9 +130,50 @@ public class actions {
               }
             }).start();
         }
+        if (action.equals("Selling")) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    MatsDao matsDao = idk(context);
+                    Mats mat = matsDao.getMatsByName(details);
+                    mat.quantity += (int) time/tInterval;
+                    matsDao.update(mat);
+                    List<Mats> mats = matsDao.getAll();
+//                    actions.makeMats("Oak", "none", 0, "none", 0),
+//                            actions.makeMats("Birch", "none", 0, "none", 0),
+//                            actions.makeMats("Spruce", "none", 0, "none", 0),
+//                            actions.makeMats("Redwood", "none", 0, "none", 0),
+//                            actions.makeMats("Iron", "none", 0, "none", 0),
+//                            actions.makeMats("Stone", "none", 0, "none", 0),
+//                            actions.makeMats("Gold", "none", 0, "none", 0),
+//                            actions.makeMats("Diamond", "none", 0, "none", 0),
+//                            actions.makeMats("Wood_Sword", "Oak", 4, "none", 0),
+//                            actions.makeMats("Stone_Sword", "Birch", 2, "Stone", 2),
+//                            actions.makeMats("Iron_Sword", "Spruce", 2, "Iron", 2),
+//                            actions.makeMats("Diamond_Sword", "Oak", 2, "Diamond", 2),
+//                            actions.makeMats("Table", "Oak", 4, "none", 0),
+//                            actions.makeMats("Chair", "Birch", 2, "stone", 2),
+//                            actions.makeMats("Furnace", "Spruce", 2, "stone", 2),
+//                            actions.makeMats("Door", "Spruce", 2, "Stone", 4),
+//                            actions.makeMats("Luxury Table", "Oak", 4, "Diamond", 1),
+//                            actions.makeMats("Luxury Chair", "Birch", 4, "iron", 2),
+//                            actions.makeMats("Oven", "Spruce", 4, "stone", 4),
+//                            actions.makeMats("Money", "none", 0, "none", 0)
+
+                    for (Mats material : mats) {
+                        String materialName = material.mat_name;
+                        Log.d("Material Name", materialName);
+                        Log.d("Material Quanitity", " " + material.quantity);
+                    }
+
+                }
+            }).start();
+
+        }
         }
 
-        public static Mats makeMats(String name, String wood_type, int wood_quantity, String rock_type, int rock_quantity ){
+        public static Mats makeMats(String name, String wood_type, int wood_quantity, String rock_type, int rock_quantity, int sell_value ){
             Mats mat = new Mats();
             mat.mat_name = name;
             mat.wood_type = wood_type;
@@ -140,6 +181,7 @@ public class actions {
             mat.mineral_type = rock_type;
             mat.mineral_quantity = rock_quantity;
             mat.quantity = 0;
+            mat.sell_value = sell_value;
             return mat;
         }
 

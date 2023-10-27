@@ -47,26 +47,27 @@ public class MainActivity extends AppCompatActivity {
 
 
             List<Mats> mats = Arrays.asList(
-                    actions.makeMats("Oak", "none", 0, "none", 0),
-                    actions.makeMats("Birch", "none", 0, "none", 0),
-                    actions.makeMats("Spruce", "none", 0, "none", 0),
-                    actions.makeMats("Redwood", "none", 0, "none", 0),
-                    actions.makeMats("Iron", "none", 0, "none", 0),
-                    actions.makeMats("Stone", "none", 0, "none", 0),
-                    actions.makeMats("Gold", "none", 0, "none", 0),
-                    actions.makeMats("Diamond", "none", 0, "none", 0),
-                    actions.makeMats("Wood_Sword", "Oak", 4, "none", 0),
-                    actions.makeMats("Stone_Sword", "Birch", 2, "Stone", 2),
-                    actions.makeMats("Iron_Sword", "Spruce", 2, "Iron", 2),
-                    actions.makeMats("Diamond_Sword", "Oak", 2, "Diamond", 2),
-                    actions.makeMats("Table", "Oak", 4, "none", 0),
-                    actions.makeMats("Chair", "Birch", 2, "stone", 2),
-                    actions.makeMats("Furnace", "Spruce", 2, "stone", 2),
-                    actions.makeMats("Door", "Spruce", 2, "Stone", 4),
-                    actions.makeMats("Luxury Table", "Oak", 4, "Diamond", 1),
-                    actions.makeMats("Luxury Chair", "Birch", 4, "iron", 2),
-                    actions.makeMats("Oven", "Spruce", 4, "stone", 4),
-                    actions.makeMats("Money", "none", 0, "none", 0)
+                    actions.makeMats("Oak", "none", 0, "none", 0,0),
+                    actions.makeMats("Birch", "none", 0, "none", 0,0),
+                    actions.makeMats("Spruce", "none", 0, "none", 0,0),
+                    actions.makeMats("Redwood", "none", 0, "none", 0,0),
+                    actions.makeMats("Iron", "none", 0, "none", 0,0),
+                    actions.makeMats("Stone", "none", 0, "none", 0,0),
+                    actions.makeMats("Gold", "none", 0, "none", 0,0),
+                    actions.makeMats("Diamond", "none", 0, "none", 0,0),
+                    actions.makeMats("Wood_Sword", "Oak", 4, "none", 0,4),
+                    actions.makeMats("Stone_Sword", "Birch", 2, "Stone", 2,8),
+                    actions.makeMats("Iron_Sword", "Spruce", 2, "Iron", 2,14),
+                    actions.makeMats("Diamond_Sword", "Redwood", 2, "Diamond", 2,22),
+                    actions.makeMats("Chair", "Oak", 4, "none", 2,4),
+                    actions.makeMats("Door", "Redwood", 6, "none", 4,6),
+                    actions.makeMats("Table", "Birch", 8, "none", 2,6),
+                    actions.makeMats("Furnace", "Spruce", 4, "stone", 4,8),
+                    actions.makeMats("Luxury Table", "Oak", 4, "none", 1,12),
+                    actions.makeMats("Luxury Chair", "Birch", 4, "iron", 2,10),
+                    actions.makeMats("Oven", "Spruce", 4, "stone", 4,8),
+                    actions.makeMats("Luxury Door", "Redwood", 2, "Gold", 4,8),
+                    actions.makeMats("Money", "none", 0, "none", 0,0)
             );
 
         new Thread(new Runnable() {

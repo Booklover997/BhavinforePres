@@ -27,5 +27,8 @@ public class Mats {
     @ColumnInfo(name="mineral_quantity")
     public int mineral_quantity;
 
+    @ColumnInfo(name="sell_value")
+    public int sell_value;
+
 
 }
