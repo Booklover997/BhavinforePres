@@ -140,6 +140,7 @@ public class actions {
                     mat.quantity += (int) time/tInterval;
                     matsDao.update(mat);
                     List<Mats> mats = matsDao.getAll();
+
 //                    actions.makeMats("Oak", "none", 0, "none", 0),
 //                            actions.makeMats("Birch", "none", 0, "none", 0),
 //                            actions.makeMats("Spruce", "none", 0, "none", 0),
