@@ -38,7 +38,51 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/stone"
+                android:id="@+id/resource5"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/pog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/guidecircle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/kek"
+                    android:layout_width="44dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/rock__1_"
+                    app:layout_constraintBottom_toBottomOf="@+id/outside"
+                    app:layout_constraintEnd_toEndOf="@+id/outside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/stone_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:text="x64"
+                    android:textColor="#000000"
+                    android:textSize="23sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"></TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/resource1"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:background="#00FFFFFF"
@@ -47,21 +91,24 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/outside"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/guidecircle"
-                    tools:layout_editor_absoluteY="1dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
-                    android:id="@+id/imageView13"
+                    android:id="@+id/kek"
                     android:layout_width="44dp"
                     android:layout_height="60dp"
                     android:src="@drawable/rock__1_"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView5"
-                    app:layout_constraintStart_toStartOf="@+id/imageView5"
-                    app:layout_constraintTop_toTopOf="@+id/imageView5" />
+                    app:layout_constraintBottom_toBottomOf="@+id/outside"
+                    app:layout_constraintEnd_toEndOf="@+id/outside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/stone_text"
@@ -85,8 +132,7 @@
                 android:background="#00FF0000"
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                app:layout_constraintHorizontal_bias="0.538"
-                app:layout_constraintStart_toEndOf="@+id/stone">
+                app:layout_constraintStart_toEndOf="@+id/resource1">
 
                 <ImageView
                     android:id="@+id/imageView6"
@@ -95,8 +141,10 @@
                     android:src="@drawable/guidecircle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/iron_text"
@@ -113,12 +161,55 @@
                     android:layout_width="69dp"
                     android:layout_height="74dp"
                     android:src="@drawable/iron__1_"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/imageView6"
-                    app:layout_constraintTop_toTopOf="@+id/imageView6"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/resource3"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toStartOf="@+id/oak"
+                app:layout_constraintStart_toStartOf="@+id/guideline5">
+
+
+                <ImageView
+                    android:id="@+id/outside"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/guidecircle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/kek"
+                    android:layout_width="44dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/rock__1_"
+                    app:layout_constraintBottom_toBottomOf="@+id/outside"
+                    app:layout_constraintEnd_toEndOf="@+id/outside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/stone_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:text="x64"
+                    android:textColor="#000000"
+                    android:textSize="23sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"></TextView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -129,7 +220,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/guideline"
                 app:layout_constraintEnd_toStartOf="@+id/oak"
                 app:layout_constraintHorizontal_bias="0.48"
-                app:layout_constraintStart_toStartOf="@+id/guideline5">
+                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                app:layout_constraintTop_toTopOf="parent">
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -146,25 +238,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/guidecircle"
-                    tools:layout_editor_absoluteY="1dp" />
-
-                <TextView
-                    android:id="@+id/diamond_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="x64"
-                    android:textColor="#000000"
-                    android:textSize="23sp"
-                    tools:layout_editor_absoluteX="50dp"
-                    tools:layout_editor_absoluteY="1dp"></TextView>
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/imageView15"
                     android:layout_width="64dp"
                     android:layout_height="68dp"
                     android:src="@drawable/diamond__1_"
-                    tools:layout_editor_absoluteX="7dp"
-                    tools:layout_editor_absoluteY="23dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+                <TextView
+                    android:id="@+id/diamond_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="x64"
+                    android:textColor="#000000"
+                    android:textSize="23sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"></TextView>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.Guideline
@@ -187,6 +287,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:background="#00FF0000"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 app:layout_constraintTop_toBottomOf="@+id/iron">
 
@@ -200,16 +301,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/birch_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="x64"
-                    android:textColor="#000000"
-                    android:textSize="23sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
-
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="58dp"
@@ -220,6 +311,16 @@
                     app:layout_constraintStart_toStartOf="@+id/imageView9"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/birch_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x64"
+                    android:textColor="#000000"
+                    android:textSize="23sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -229,6 +330,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
                 android:background="#00FF0000"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
                 app:layout_constraintTop_toTopOf="@+id/guideline">
 
@@ -242,16 +344,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/spruce_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="x64"
-                    android:textColor="#000000"
-                    android:textSize="23sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
-
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="66dp"
@@ -262,33 +354,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/imageView10" />
 
+                <TextView
+                    android:id="@+id/spruce_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="x64"
+                    android:textColor="#000000"
+                    android:textSize="23sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/guidecircle"
-                tools:layout_editor_absoluteX="4dp"
-                tools:layout_editor_absoluteY="116dp" />
-
-            <TextView
-                android:id="@+id/oak_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="x64"
-                android:textColor="#000000"
-                android:textSize="23sp"
-                tools:layout_editor_absoluteX="56dp"
-                tools:layout_editor_absoluteY="116dp"></TextView>
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="61dp"
-                android:layout_height="59dp"
-                android:src="@drawable/oak"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="144dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
