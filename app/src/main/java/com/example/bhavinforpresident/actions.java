@@ -3,6 +3,8 @@ import android.util.Log;
 import androidx.room.Room;
 import database.*;
 import android.content.Context;
+
+import java.util.Arrays;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -69,7 +71,7 @@ public class actions {
 
 
 
-    public static void completeAction(Context context, long time) {
+    public static void completeAction(Context context, final long time) {
         Log.d("????", action);
         if (action.equals("Explore")) {
             new Thread(new Runnable() {
@@ -134,11 +136,9 @@ public class actions {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-
+                    long t = time;
                     MatsDao matsDao = idk(context);
-                    Mats mat = matsDao.getMatsByName(details);
-                    mat.quantity += (int) time/tInterval;
-                    matsDao.update(mat);
+                    Mats Money = matsDao.getMatsByName("Money");
                     List<Mats> mats = matsDao.getAll();
 
 //                    actions.makeMats("Oak", "none", 0, "none", 0),
@@ -161,11 +161,16 @@ public class actions {
 //                            actions.makeMats("Luxury Chair", "Birch", 4, "iron", 2),
 //                            actions.makeMats("Oven", "Spruce", 4, "stone", 4),
 //                            actions.makeMats("Money", "none", 0, "none", 0)
-
+                    List<String> items = Arrays.asList("Wood_Sword", "Stone_Sword", "Iron_Sword", "Diamond_Sword","Table", "Chair", "Furnace","Door", "Luxury Table", "Luxury Chair", "Oven");
                     for (Mats material : mats) {
-                        String materialName = material.mat_name;
-                        Log.d("Material Name", materialName);
-                        Log.d("Material Quanitity", " " + material.quantity);
+                        if (items.contains(material.mat_name)){
+                            while((material.quantity>0)&&(time>=60000)){
+                                t-=60000;
+                                material.quantity-=1;
+                                Money.quantity+=material.sell_value;
+                            }
+                            matsDao.update(material);
+                        }
                     }
 
                 }
