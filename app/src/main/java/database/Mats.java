@@ -30,5 +30,8 @@ public class Mats {
     @ColumnInfo(name="sell_value")
     public int sell_value;
 
+    @ColumnInfo(name="purchase_value")
+    public int purchase_value;
+
 
 }

@@ -38,8 +38,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/oaksquare
-"
+                android:id="@+id/oaksquare"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:background="#00FFFFFF"
@@ -316,15 +315,13 @@
                 android:orientation="vertical" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/birchcircle"
+                android:id="@+id/birchsquare"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 android:background="#00FF0000"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/spruce"
-                app:layout_constraintStart_toEndOf="@+id/oaksquare
-"
-                app:layout_constraintTop_toBottomOf="@+id/ironsquare">
+                app:layout_constraintEnd_toStartOf="@+id/spruceconstraint"
+                app:layout_constraintStart_toEndOf="@+id/oaksquare">
 
                 <ImageView
                     android:id="@+id/birchcircle"
@@ -333,8 +330,10 @@
                     android:src="@drawable/guidecircle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <ImageView
                     android:id="@+id/birch"
@@ -364,7 +363,6 @@
                 android:id="@+id/spruceconstraint"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
                 android:background="#00FF0000"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -378,8 +376,10 @@
                     android:src="@drawable/guidecircle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
                     android:id="@+id/spruce"

@@ -16,7 +16,7 @@ import java.util.Map;
 public class actions {
     private static Boolean set = false;
     //Can be set to craft, sell, or explore
-    private static String action = "Sell";
+    private static String action = "Selling";
     private static String details = "nada";
     private static int tInterval = 60000*5;
     public static void setAction(String action_to_set){
@@ -77,11 +77,19 @@ public class actions {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-
+                    long t = time;
                     MatsDao matsDao = idk(context);
                     Mats mat = matsDao.getMatsByName(details);
-                    mat.quantity += (int) time/tInterval;
+                    Mats Money = matsDao.getMatsByName("Money");
+                    //should be going 12-> 13 instead is going 12->164 FIXED by changing time to t
+                    while (t>=tInterval && Money.quantity>=mat.purchase_value){
+                            mat.quantity+=1;
+                            Money.quantity-=mat.purchase_value;
+                            t-=tInterval;
+
+                    }
                     matsDao.update(mat);
+                    matsDao.update((Money));
                     List<Mats> mats = matsDao.getAll();
 
 
@@ -139,7 +147,10 @@ public class actions {
                     long t = time;
                     MatsDao matsDao = idk(context);
                     Mats Money = matsDao.getMatsByName("Money");
+                    Mats Table = matsDao.getMatsByName("Table");
+
                     List<Mats> mats = matsDao.getAll();
+                    Log.d("monehymonehymonehymononehymonehymonehymonehymonehymonehymonehymonehyv", ""+Table.quantity);
 
 //                    actions.makeMats("Oak", "none", 0, "none", 0),
 //                            actions.makeMats("Birch", "none", 0, "none", 0),
@@ -164,11 +175,12 @@ public class actions {
                     List<String> items = Arrays.asList("Wood_Sword", "Stone_Sword", "Iron_Sword", "Diamond_Sword","Table", "Chair", "Furnace","Door", "Luxury Table", "Luxury Chair", "Oven");
                     for (Mats material : mats) {
                         if (items.contains(material.mat_name)){
-                            while((material.quantity>0)&&(time>=60000)){
+                            while((material.quantity>0)&&(t>=60000)){
                                 t-=60000;
                                 material.quantity-=1;
                                 Money.quantity+=material.sell_value;
                             }
+                            matsDao.update(Money);
                             matsDao.update(material);
                         }
                     }
@@ -190,6 +202,18 @@ public class actions {
             mat.sell_value = sell_value;
             return mat;
         }
+    public static Mats makeMats(String name, String wood_type, int wood_quantity, String rock_type, int rock_quantity, int sell_value, int purchase_value ){
+        Mats mat = new Mats();
+        mat.mat_name = name;
+        mat.wood_type = wood_type;
+        mat.wood_quantity = wood_quantity;
+        mat.mineral_type = rock_type;
+        mat.mineral_quantity = rock_quantity;
+        mat.purchase_value = purchase_value;
+        mat.quantity = 0;
+        mat.sell_value = sell_value;
+        return mat;
+    }
 
 
 

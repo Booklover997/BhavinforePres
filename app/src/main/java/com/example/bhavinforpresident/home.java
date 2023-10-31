@@ -95,7 +95,7 @@ public class home extends Fragment {
             public void run() {
                 AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").fallbackToDestructiveMigration().build();
                 Mats mats = db.MatsDao().getMatsByName("Money");
-
+                Log.d("money", ""+mats.quantity);
                 Log.d("MMM", ""+mats.quantity);
                 // Update the UI elements on the main thread
             }
@@ -120,9 +120,9 @@ public class home extends Fragment {
                     update_counter=0;
                 }
                 current_progress = current_progress + 1;
+                progressBar.setMax((int)startTime/100);
                 progressBar.setProgress(current_progress);
                 //100 instead of 1000 to make it smoother
-                progressBar.setMax((int)startTime/100);
             }
 
             @Override

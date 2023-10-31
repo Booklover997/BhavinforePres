@@ -44,17 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-
-
-            List<Mats> mats = Arrays.asList(
-                    actions.makeMats("Oak", "none", 0, "none", 0,0),
-                    actions.makeMats("Birch", "none", 0, "none", 0,0),
-                    actions.makeMats("Spruce", "none", 0, "none", 0,0),
-                    actions.makeMats("Redwood", "none", 0, "none", 0,0),
-                    actions.makeMats("Iron", "none", 0, "none", 0,0),
-                    actions.makeMats("Stone", "none", 0, "none", 0,0),
-                    actions.makeMats("Gold", "none", 0, "none", 0,0),
-                    actions.makeMats("Diamond", "none", 0, "none", 0,0),
+         List<Mats> mats = Arrays.asList(
+                    actions.makeMats("Oak", "none", 0, "none", 0,0,0),
+                    actions.makeMats("Birch", "none", 0, "none", 0,0,1),
+                    actions.makeMats("Spruce", "none", 0, "none", 0,0,5),
+                    actions.makeMats("Redwood", "none", 0, "none", 0,0,10),
+                    actions.makeMats("Iron", "none", 0, "none", 0,0,1),
+                    actions.makeMats("Stone", "none", 0, "none", 0,0,0),
+                    actions.makeMats("Gold", "none", 0, "none", 0,0,5),
+                    actions.makeMats("Diamond", "none", 0, "none", 0,0,10),
                     actions.makeMats("Stone_Sword", "Oak", 2, "Stone", 2,6),
                     actions.makeMats("Iron_Sword", "Birch", 2, "Iron", 2,8),
                     actions.makeMats("Gold_Sword", "Spruce", 2, "Iron", 2,10),
@@ -67,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     actions.makeMats("Iron Armor", "none", 0, "Iron", 6,8),
                     actions.makeMats("Gold Armor", "none", 0, "Gold", 6,10),
                     actions.makeMats("Diamond Armor", "none", 0, "Diamond", 6,12),
-
                     actions.makeMats("Money", "none", 0, "none", 0,0)
             );
 
