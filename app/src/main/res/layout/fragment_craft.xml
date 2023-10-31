@@ -472,7 +472,7 @@
                                 app:layout_constraintVertical_bias="0.0">
 
                                 <ImageView
-                                    android:id="@+id/imageView3"
+                                    android:id="@+id/craftingoak"
                                     android:layout_width="78dp"
                                     android:layout_height="93dp"
                                     android:src="@drawable/oak"
@@ -483,7 +483,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
-                                    android:text="x4"
+                                    android:text="x6"
                                     android:textColor="#000000"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -546,7 +546,7 @@
                                 app:layout_constraintVertical_bias="0.0">
 
                                 <ImageView
-                                    android:id="@+id/imageView2"
+                                    android:id="@+id/craftingbirch"
                                     android:layout_width="85dp"
                                     android:layout_height="93dp"
                                     android:src="@drawable/birch"
@@ -559,14 +559,14 @@
                                     android:id="@+id/textView3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="40dp"
-                                    android:text="x4"
+                                    android:text="x6"
                                     android:textColor="#000000"
                                     android:textSize="30sp"
                                     android:translationX="-30dp"
                                     android:translationY="-25dp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                                    app:layout_constraintStart_toEndOf="@+id/craftingbirch"
                                     app:layout_constraintTop_toTopOf="parent"></TextView>
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -647,9 +647,11 @@
                                 app:layout_constraintVertical_bias="0.0">
 
                                 <ImageView
-                                    android:id="@+id/imageView6"
+                                    android:id="@+id/craftingspruce"
                                     android:layout_width="90dp"
                                     android:layout_height="99dp"
+                                    android:scaleX="0.9"
+                                    android:scaleY="0.9"
                                     android:src="@drawable/spruce"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -660,12 +662,12 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
-                                    android:text="x4"
+                                    android:text="x6"
                                     android:textColor="#000000"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toEndOf="@+id/imageView6"
+                                    app:layout_constraintStart_toEndOf="@+id/craftingspruce"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.0"></TextView>
 
@@ -716,7 +718,7 @@
                                 android:src="@drawable/shelf__1_"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.294"
+                                app:layout_constraintHorizontal_bias="0.198"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="1.0">
@@ -724,9 +726,9 @@
                             </ImageView>
 
                             <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="90dp"
+                                android:layout_width="150dp"
                                 android:layout_height="90dp"
-                                android:background="#FF0000"
+                                android:background="#00FF0000"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.534"
@@ -735,19 +737,24 @@
                                 app:layout_constraintVertical_bias="0.0">
 
                                 <ImageView
-                                    android:id="@+id/imageView7"
+                                    android:id="@+id/craftingredwood"
                                     android:layout_width="96dp"
                                     android:layout_height="105dp"
+                                    android:scaleX="0.9"
+                                    android:scaleY="0.9"
                                     android:src="@drawable/redwood"
-                                    tools:layout_editor_absoluteX="-6dp"
-                                    tools:layout_editor_absoluteY="-51dp" />
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
+                                    android:id="@+id/textView10"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
-                                    android:text="x4"
-                                    android:textColor="#FF00FF"
+                                    android:text="x6"
+                                    android:textColor="#000000"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -756,30 +763,6 @@
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="90dp"
-                                android:layout_height="90dp"
-                                android:background="#FF0000"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.946"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="50dp"
-                                    android:text="x4"
-                                    android:textColor="#FF00FF"
-                                    android:textSize="30sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.0"></TextView>
-                            </androidx.constraintlayout.widget.ConstraintLayout>
 
                             <TextView
                                 android:layout_width="109dp"
@@ -826,12 +809,13 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
+                                    android:id="@+id/oven"
                                     android:layout_width="89dp"
                                     android:layout_height="89dp"
-                                    android:src="@drawable/chair"
+                                    android:src="@drawable/oven"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.294"
+                                    app:layout_constraintHorizontal_bias="0.211"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="1.0">
@@ -841,7 +825,7 @@
                                 <androidx.constraintlayout.widget.ConstraintLayout
                                     android:layout_width="90dp"
                                     android:layout_height="90dp"
-                                    android:background="#FF0000"
+                                    android:background="#00FF0000"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintHorizontal_bias="0.534"
@@ -850,58 +834,50 @@
                                     app:layout_constraintVertical_bias="0.0">
 
                                     <TextView
+                                        android:id="@+id/textView12"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="50dp"
-                                        android:text="x4"
-                                        android:textColor="#FF00FF"
+                                        android:text="x6"
+                                        android:textColor="#000000"
                                         android:textSize="30sp"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
                                         app:layout_constraintTop_toTopOf="parent"
                                         app:layout_constraintVertical_bias="0.0"></TextView>
-                                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                                <TextView
-                                    android:layout_width="101dp"
-                                    android:layout_height="51dp"
-                                    android:text="Chair"
-                                    android:textSize="30sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"></TextView>
+                                    <ImageView
+                                        android:id="@+id/craftingrock"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="6dp"
+                                        android:src="@drawable/rock__1_"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toStartOf="@+id/textView12"
+                                        app:layout_constraintHorizontal_bias="0.0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView12"
+                                        app:layout_constraintVertical_bias="1.0" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
-                                android:background="#FF0000"
+                                android:background="#00FF0000"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.534"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="50dp"
-                                    android:text="x4"
-                                    android:textColor="#FF00FF"
-                                    android:textSize="30sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.0"></TextView>
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
+                                app:layout_constraintVertical_bias="0.0"/>
 
                             <TextView
                                 android:layout_width="101dp"
                                 android:layout_height="51dp"
-                                android:text="Chair"
+                                android:text="Oven"
                                 android:textSize="30sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -942,23 +918,10 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent">
 
-                                <ImageView
-                                    android:layout_width="89dp"
-                                    android:layout_height="89dp"
-                                    android:src="@drawable/down"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.294"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="1.0">
-
-                                </ImageView>
-
                                 <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/constraintLayout4"
                                     android:layout_width="90dp"
                                     android:layout_height="90dp"
-                                    android:background="#FF0000"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintHorizontal_bias="0.534"
@@ -966,48 +929,52 @@
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.0">
 
-                                    <TextView
+                                    <ImageView
+                                        android:id="@+id/imageView3"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginBottom="50dp"
-                                        android:text="x4"
-                                        android:textColor="#FF00FF"
-                                        android:textSize="30sp"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="2dp"
+                                        android:src="@drawable/iron__1_"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         app:layout_constraintEnd_toEndOf="parent"
-                                        app:layout_constraintTop_toTopOf="parent"
-                                        app:layout_constraintVertical_bias="0.0"></TextView>
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <TextView
+                                    android:id="@+id/textView11"
                                     android:layout_width="110dp"
                                     android:layout_height="65dp"
-                                    android:text="Furnace"
+                                    android:text="Iron armor"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
+                                    app:layout_constraintHorizontal_bias="0.013"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.0"></TextView>
+                                    app:layout_constraintVertical_bias="1.0"></TextView>
+
+                                <ImageView
+                                    android:layout_width="89dp"
+                                    android:layout_height="89dp"
+                                    android:layout_marginStart="25dp"
+                                    android:layout_marginEnd="125dp"
+                                    android:layout_marginBottom="1dp"
+                                    android:src="@drawable/iarmor"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
+                                    app:layout_constraintStart_toEndOf="@+id/textView11"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </ImageView>
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <ImageView
-                                android:layout_width="89dp"
-                                android:layout_height="89dp"
-                                android:src="@drawable/down"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.294"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0">
-
-                            </ImageView>
 
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
-                                android:background="#FF0000"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.534"
@@ -1019,31 +986,19 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
-                                    android:text="x4"
-                                    android:textColor="#FF00FF"
+                                    android:text="x6"
+                                    android:textColor="#000000"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.0"></TextView>
+
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:layout_width="89dp"
-                            android:layout_height="89dp"
-                            android:src="@drawable/down"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.294"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="1.0">
-
-                        </ImageView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
