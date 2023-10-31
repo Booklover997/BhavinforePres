@@ -532,23 +532,12 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <ImageView
-                                android:layout_width="89dp"
-                                android:layout_height="89dp"
-                                android:src="@drawable/down"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.294"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0">
-
-                            </ImageView>
-
                             <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="90dp"
+                                android:id="@+id/constraintLayout3"
+                                android:layout_width="150dp"
                                 android:layout_height="90dp"
-                                android:background="#FF0000"
+                                android:background="#FFFFFF"
+                                android:translationX="30dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.534"
@@ -556,43 +545,56 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="0.0">
 
+                                <ImageView
+                                    android:id="@+id/imageView2"
+                                    android:layout_width="85dp"
+                                    android:layout_height="93dp"
+                                    android:src="@drawable/birch"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/textView3"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
                                 <TextView
+                                    android:id="@+id/textView3"
                                     android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="50dp"
+                                    android:layout_height="40dp"
                                     android:text="x4"
-                                    android:textColor="#FF00FF"
+                                    android:textColor="#000000"
                                     android:textSize="30sp"
+                                    android:translationX="-30dp"
+                                    android:translationY="-25dp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.0"></TextView>
+                                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                                    app:layout_constraintTop_toTopOf="parent"></TextView>
+
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                             <TextView
+                                android:id="@+id/textView2"
                                 android:layout_width="113dp"
                                 android:layout_height="76dp"
-                                android:text="Wood Sword"
+                                android:text="Door"
                                 android:textSize="30sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
+                            <ImageView
+                                android:layout_width="89dp"
+                                android:layout_height="89dp"
+                                android:layout_marginBottom="1dp"
+                                android:src="@drawable/door"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
+                                app:layout_constraintStart_toEndOf="@+id/textView2"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </ImageView>
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:layout_width="89dp"
-                            android:layout_height="89dp"
-                            android:src="@drawable/down"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.294"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="1.0">
-
-                        </ImageView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -623,10 +625,10 @@
                             <ImageView
                                 android:layout_width="89dp"
                                 android:layout_height="89dp"
-                                android:src="@drawable/down"
+                                android:src="@drawable/table"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.294"
+                                app:layout_constraintHorizontal_bias="0.191"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="1.0">
@@ -634,9 +636,9 @@
                             </ImageView>
 
                             <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="90dp"
+                                android:layout_width="150dp"
                                 android:layout_height="90dp"
-                                android:background="#FF0000"
+
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.531"
@@ -644,67 +646,42 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="0.0">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="50dp"
-                                    android:text="x4"
-                                    android:textColor="#FF00FF"
-                                    android:textSize="30sp"
+                                <ImageView
+                                    android:id="@+id/imageView6"
+                                    android:layout_width="90dp"
+                                    android:layout_height="99dp"
+                                    android:src="@drawable/spruce"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.0"></TextView>
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="90dp"
-                                android:layout_height="90dp"
-                                android:background="#FF0000"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.946"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0">
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
                                     android:text="x4"
-                                    android:textColor="#FF00FF"
+                                    android:textColor="#000000"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/imageView6"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.0"></TextView>
+
                             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                             <TextView
                                 android:layout_width="120dp"
                                 android:layout_height="90dp"
-                                android:text="Steel Sword"
+                                android:text="Table"
                                 android:textSize="29dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:layout_width="89dp"
-                            android:layout_height="89dp"
-                            android:src="@drawable/down"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.294"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="1.0">
-
-                        </ImageView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -734,7 +711,9 @@
                             <ImageView
                                 android:layout_width="89dp"
                                 android:layout_height="89dp"
-                                android:src="@drawable/down"
+                                android:scaleX="0.9"
+                                android:scaleY="0.9"
+                                android:src="@drawable/shelf__1_"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.294"
@@ -755,6 +734,14 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="0.0">
 
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="96dp"
+                                    android:layout_height="105dp"
+                                    android:src="@drawable/redwood"
+                                    tools:layout_editor_absoluteX="-6dp"
+                                    tools:layout_editor_absoluteY="-51dp" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -766,6 +753,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.0"></TextView>
+
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -796,7 +784,7 @@
                             <TextView
                                 android:layout_width="109dp"
                                 android:layout_height="77dp"
-                                android:text="Diamond Sword"
+                                android:text="Shelf"
                                 android:textSize="27sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -804,19 +792,6 @@
                                 app:layout_constraintVertical_bias="1.0"></TextView>
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:layout_width="89dp"
-                            android:layout_height="89dp"
-                            android:src="@drawable/down"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.294"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="1.0">
-
-                        </ImageView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -853,7 +828,7 @@
                                 <ImageView
                                     android:layout_width="89dp"
                                     android:layout_height="89dp"
-                                    android:src="@drawable/down"
+                                    android:src="@drawable/chair"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintHorizontal_bias="0.294"
@@ -898,19 +873,6 @@
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <ImageView
-                                android:layout_width="89dp"
-                                android:layout_height="89dp"
-                                android:src="@drawable/down"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.294"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="1.0">
-
-                            </ImageView>
-
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:layout_width="90dp"
                                 android:layout_height="90dp"
@@ -933,6 +895,7 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
                                     app:layout_constraintVertical_bias="0.0"></TextView>
+
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
                             <TextView
@@ -945,19 +908,6 @@
                                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:layout_width="89dp"
-                            android:layout_height="89dp"
-                            android:src="@drawable/down"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.294"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="1.0">
-
-                        </ImageView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>

@@ -93,17 +93,11 @@ public class home extends Fragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").build();
+                AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").fallbackToDestructiveMigration().build();
                 Mats mats = db.MatsDao().getMatsByName("Money");
 
-
+                Log.d("MMM", ""+mats.quantity);
                 // Update the UI elements on the main thread
-                requireActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        moneytext.setText(""+mats.quantity);
-                    }
-                });
             }
 
         }).start();
