@@ -87,7 +87,6 @@ public class  Craft extends androidx.fragment.app.Fragment {
         iron_text = view.findViewById(R.id.iron_text);
         rock_text = view.findViewById(R.id.stone_text);
         diamonds_text = view.findViewById(R.id.diamond_text);
-        oak_text = view.findViewById(R.id.oak_text);
         birch_text = view.findViewById(R.id.birch_text);
         spruce_text = view.findViewById(R.id.spruce_text);
         CardView table = view.findViewById(R.id.table);
