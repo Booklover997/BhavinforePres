@@ -72,7 +72,7 @@ public class home extends Fragment {
         decreasedown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (millis>0) {
+                if (millis>0 && !running) {
                     millis -= 300000;
                     startTime -= 300000;
                     updateText();
@@ -83,10 +83,11 @@ public class home extends Fragment {
         increaseup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!running){
                     millis += 300000;
                     startTime += 300000;
                     updateText();
-            }
+            }}
         });
 
 
@@ -108,6 +109,7 @@ public class home extends Fragment {
         button_start_reset.setText(getResources().getString(R.string.stop));
         button_start_reset.setBackgroundColor(Color.RED);
         update_counter = 0;
+        running=true;
         actions.completeAction(getActivity().getApplicationContext(),startTime);
         //TODO: Get this outa hear
         Countdown_Timer = new CountDownTimer(millis, 100) {
@@ -130,6 +132,7 @@ public class home extends Fragment {
                 //Make sure its full when its finished
                     progressBar.setProgress((int)startTime/100);
                 actions.completeAction(getActivity().getApplicationContext(),startTime);
+                running =false;
 
             }
         }.start();

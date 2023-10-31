@@ -62,9 +62,6 @@ public class MainActivity extends AppCompatActivity {
                     actions.makeMats("Table", "Spruce", 6, "none", 0,10),
                     actions.makeMats("Shelf", "Redwood", 6, "none", 0,12),
                     actions.makeMats("Oven", "none", 0, "Stone", 6,6),
-                    actions.makeMats("Iron Armor", "none", 0, "Iron", 6,8),
-                    actions.makeMats("Gold Armor", "none", 0, "Gold", 6,10),
-                    actions.makeMats("Diamond Armor", "none", 0, "Diamond", 6,12),
                     actions.makeMats("Money", "none", 0, "none", 0,0)
             );
 
@@ -92,13 +89,11 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Find our drawer view
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
         // Setup drawer view
@@ -129,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
      }
 
      public void selectDrawerItem(MenuItem menuItem) {
-         // Create a new fragment and specify the fragment to show based on nav item clicked
          Fragment fragment = null;
          Class fragmentClass = null;
 

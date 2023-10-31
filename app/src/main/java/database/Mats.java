@@ -5,6 +5,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Mats")
 public class Mats {
+    //this is teh databasde
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     public int id;

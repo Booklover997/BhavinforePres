@@ -41,6 +41,8 @@ public class  Craft extends androidx.fragment.app.Fragment {
     TextView oak_text;
     TextView birch_text;
     TextView spruce_text;
+    TextView gold_text;
+    TextView redwood_text;
 
     private CardView table;
     private CardView wood_sword;
@@ -84,99 +86,105 @@ public class  Craft extends androidx.fragment.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_craft, container, false);
-//        iron_text = view.findViewById(R.id.iron_text);
-//        rock_text = view.findViewById(R.id.stone_text);
-//        diamonds_text = view.findViewById(R.id.diamond_text);
-//        birch_text = view.findViewById(R.id.birch_text);
-//        spruce_text = view.findViewById(R.id.spruce_text);
-//        CardView table = view.findViewById(R.id.table);
-//        CardView wood_sword = view.findViewById(R.id.wood_sword);
-//        CardView iron_sword = view.findViewById(R.id.steel_Sword);
-//        CardView diamond_sword = view.findViewById(R.id.diamond_sword);
-//        CardView chair = view.findViewById(R.id.chair);
-//
-//        //make change color on click for a recipe and set action
-//        table.setOnClickListener(l-> {
-//            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-//            table.setBackgroundColor(Color.RED);
-//            actions.setDetails("Table");
-//            actions.setAction("Craft");
-//        });
-//
-//        wood_sword.setOnClickListener(l-> {
-//            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-//                wood_sword.setBackgroundColor(Color.RED);
-//            actions.setDetails("Wood_Sword");
-//            actions.setAction("Craft");
-//
-//        });
-//
-//        iron_sword.setOnClickListener(l-> {
-//            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-//
-//                iron_sword.setBackgroundColor(Color.RED);
-//            actions.setDetails("Iron_Sword");
-//            actions.setAction("Craft");
-//
-//        });
-//
-//        diamond_sword.setOnClickListener(l-> {
-//            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-//
-//                diamond_sword.setBackgroundColor(Color.RED);
-//                actions.setDetails("Diamond_Sword");
-//                actions.setAction("Craft");
-//
-//        });
-//
-//        chair.setOnClickListener(l-> {
-//            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-//
-//                chair.setBackgroundColor(Color.RED);
-//            actions.setDetails("Chair");
-//            actions.setAction("Craft");
-//
-//        });
-//
-//        // Start a new thread to perform database operations
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").build();
-//                List<Mats> mats = db.MatsDao().getAll();
-//                Map<String, Integer> materialMap = new HashMap<>();
-//                Log.d("Hashmap", String.valueOf(materialMap.get("Iron")));
-//
-//                // Iterate through the list and build the mapping
-//                for (Mats material : mats) {
-//                    String materialName = material.mat_name;
-//                    int materialQuantity = material.quantity;
-//
-//                    // Add the material name and quantity to the map
-//                    materialMap.put(materialName, materialQuantity);
-//                }
-//
-//                // Update the UI elements on the main thread
-//                requireActivity().runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        updateUI(materialMap);
-//                    }
-//                });
-//            }
-//        }).start();
+        iron_text = view.findViewById(R.id.iron_text);
+        rock_text = view.findViewById(R.id.stone_text);
+        gold_text = view.findViewById(R.id.gold_text);
+        oak_text = view.findViewById(R.id.oak_text) ;
+        diamonds_text = view.findViewById(R.id.diamond_text);
+        birch_text = view.findViewById(R.id.birch_text);
+        spruce_text = view.findViewById(R.id.spruce_text);
+        redwood_text = view.findViewById(R.id.redwood_text);
+        CardView table = view.findViewById(R.id.table);
+        CardView wood_sword = view.findViewById(R.id.wood_sword);
+        CardView iron_sword = view.findViewById(R.id.steel_Sword);
+        CardView diamond_sword = view.findViewById(R.id.diamond_sword);
+        CardView chair = view.findViewById(R.id.chair);
+
+        //make change color on click for a recipe and set action
+        table.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+            table.setBackgroundColor(Color.RED);
+            actions.setDetails("Table");
+            actions.setAction("Craft");
+        });
+
+        wood_sword.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+                wood_sword.setBackgroundColor(Color.RED);
+            actions.setDetails("Wood_Sword");
+            actions.setAction("Craft");
+
+        });
+
+        iron_sword.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+
+                iron_sword.setBackgroundColor(Color.RED);
+            actions.setDetails("Iron_Sword");
+            actions.setAction("Craft");
+
+        });
+
+        diamond_sword.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+
+                diamond_sword.setBackgroundColor(Color.RED);
+                actions.setDetails("Diamond_Sword");
+                actions.setAction("Craft");
+
+        });
+
+        chair.setOnClickListener(l-> {
+            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+
+                chair.setBackgroundColor(Color.RED);
+            actions.setDetails("Chair");
+            actions.setAction("Craft");
+
+        });
+
+        // Start a new thread to perform database operations
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").build();
+                List<Mats> mats = db.MatsDao().getAll();
+                Map<String, Integer> materialMap = new HashMap<>();
+                Log.d("Hashmap", String.valueOf(materialMap.get("Iron")));
+
+                // Iterate through the list and build the mapping
+                for (Mats material : mats) {
+                    String materialName = material.mat_name;
+                    int materialQuantity = material.quantity;
+
+                    // Add the material name and quantity to the map
+                    materialMap.put(materialName, materialQuantity);
+                }
+
+                // Update the UI elements on the main thread
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateUI(materialMap);
+                    }
+                });
+            }
+        }).start();
 
         return view;
     }
 
     private void updateUI(Map<String, Integer> materialMap) {
 //        // Access and set the text for each UI element using materialMap
-//        iron_text.setText("x" + String.valueOf(materialMap.get("Iron")));
-//        rock_text.setText("x" + String.valueOf(materialMap.get("Stone")));
-//        diamonds_text.setText("x" + String.valueOf(materialMap.get("Diamond")));
-//        oak_text.setText("x" + String.valueOf(materialMap.get("Oak")));
-//        birch_text.setText("x" + String.valueOf(materialMap.get("Birch")));
-//        spruce_text.setText("x" + String.valueOf(materialMap.get("Spruce")));
+        iron_text.setText("x" + String.valueOf(materialMap.get("Iron")));
+        rock_text.setText("x" + String.valueOf(materialMap.get("Stone")));
+        diamonds_text.setText("x" + String.valueOf(materialMap.get("Diamond")));
+        oak_text.setText("x" + String.valueOf(materialMap.get("Oak")));
+        birch_text.setText("x" + String.valueOf(materialMap.get("Birch")));
+        spruce_text.setText("x" + String.valueOf(materialMap.get("Spruce")));
+        redwood_text.setText("x" + String.valueOf(materialMap.get("Redwood")));
+        gold_text.setText("x" + String.valueOf(materialMap.get("Gold")));
+
         Log.d("pass", "pass");
     }
     private void resetColors(CardView table, CardView wood_sword, CardView iron_sword, CardView diamond_sword, CardView chair) {
