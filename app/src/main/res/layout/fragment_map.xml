@@ -64,10 +64,10 @@
                         app:srcCompat="@drawable/down" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <!--android:visibility="gone"-->
 
                 <LinearLayout
                     android:id="@+id/hidden_view_woods"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -230,7 +230,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginBottom="10dp"
-                            android:src="@drawable/down" />
+                            android:src="@drawable/redwood" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -325,10 +325,10 @@
                         app:srcCompat="@drawable/down" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <!--android:visibility="gone"-->
                 <LinearLayout
                     android:id="@+id/hidden_view_mountains"
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
