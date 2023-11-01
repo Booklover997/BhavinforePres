@@ -16,7 +16,7 @@
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
+            android:background="#6494CA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -413,7 +413,7 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:background="#0F0F00"
+            android:background="#6494CA"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -886,7 +886,7 @@
                                 app:layout_constraintHorizontal_bias="0.534"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.0"/>
+                                app:layout_constraintVertical_bias="0.0" />
 
                             <TextView
                                 android:id="@+id/sswordtxt"
@@ -1011,7 +1011,6 @@
                                     app:layout_constraintVertical_bias="0.0"></TextView>
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1296,8 +1295,8 @@
 
                                 <TextView
                                     android:id="@+id/dswordtxt"
-                                    android:layout_width="110dp"
-                                    android:layout_height="65dp"
+                                    android:layout_width="67dp"
+                                    android:layout_height="101dp"
                                     android:text="Diamond Sword"
                                     android:textSize="15sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
