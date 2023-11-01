@@ -53,15 +53,15 @@ public class MainActivity extends AppCompatActivity {
                     actions.makeMats("Stone", "none", 0, "none", 0,0,0),
                     actions.makeMats("Gold", "none", 0, "none", 0,0,5),
                     actions.makeMats("Diamond", "none", 0, "none", 0,0,10),
-                    actions.makeMats("Stone_Sword", "Oak", 2, "Stone", 2,6),
-                    actions.makeMats("Iron_Sword", "Birch", 2, "Iron", 2,8),
-                    actions.makeMats("Gold_Sword", "Spruce", 2, "Iron", 2,10),
-                    actions.makeMats("Diamond_Sword", "Redwood", 2, "Diamond", 2,12),
+                    actions.makeMats("Stone_Sword", "none", 0, "Stone", 6,6),
+                    actions.makeMats("Iron_Sword", "none", 0, "Iron", 6,8),
+                    actions.makeMats("Gold_Sword", "none", 0, "Iron", 6,10),
+                    actions.makeMats("Diamond_Sword", "none", 0, "Diamond", 6,12),
                     actions.makeMats("Chair", "Oak", 6, "none", 0,6),
                     actions.makeMats("Door", "Birch", 6, "none", 0,8),
                     actions.makeMats("Table", "Spruce", 6, "none", 0,10),
                     actions.makeMats("Shelf", "Redwood", 6, "none", 0,12),
-                    actions.makeMats("Oven", "none", 0, "Stone", 6,6),
+
                     actions.makeMats("Money", "none", 0, "none", 0,0)
             );
 
