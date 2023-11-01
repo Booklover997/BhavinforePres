@@ -424,7 +424,7 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/table"
+                    android:id="@+id/chairtop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -448,6 +448,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
+                                android:id="@+id/chairimg"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
                                 android:src="@drawable/chair"
@@ -476,10 +477,13 @@
                                     android:layout_width="78dp"
                                     android:layout_height="93dp"
                                     android:src="@drawable/oak"
-                                    tools:layout_editor_absoluteX="5dp"
-                                    tools:layout_editor_absoluteY="3dp" />
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/crftingoakquant"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
+                                    android:id="@+id/crftingoakquant"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
@@ -511,14 +515,14 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/wood_sword"
+                    android:id="@+id/doortop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintHorizontal_bias="0.473"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/table"
+                    app:layout_constraintTop_toBottomOf="@+id/chairtop"
                     app:layout_constraintVertical_bias="0.060000002">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -536,7 +540,7 @@
                                 android:id="@+id/constraintLayout3"
                                 android:layout_width="150dp"
                                 android:layout_height="90dp"
-                                android:background="#FFFFFF"
+                                android:background="#00FFFFFF"
                                 android:translationX="30dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -573,7 +577,7 @@
 
 
                             <TextView
-                                android:id="@+id/textView2"
+                                android:id="@+id/doortxt"
                                 android:layout_width="113dp"
                                 android:layout_height="76dp"
                                 android:text="Door"
@@ -583,14 +587,17 @@
                                 app:layout_constraintTop_toTopOf="parent"></TextView>
 
                             <ImageView
+                                android:id="@+id/doorimg"
                                 android:layout_width="89dp"
                                 android:layout_height="89dp"
                                 android:layout_marginBottom="1dp"
                                 android:src="@drawable/door"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
-                                app:layout_constraintStart_toEndOf="@+id/textView2"
-                                app:layout_constraintTop_toTopOf="parent">
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toEndOf="@+id/doortxt"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="1.0">
 
                             </ImageView>
 
@@ -601,14 +608,14 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/steel_Sword"
+                    android:id="@+id/tabletop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintHorizontal_bias="0.473"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/wood_sword"
+                    app:layout_constraintTop_toBottomOf="@+id/doortop"
                     app:layout_constraintVertical_bias="0.060000002">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -623,6 +630,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
+                                android:id="@+id/tableimg"
                                 android:layout_width="89dp"
                                 android:layout_height="89dp"
                                 android:src="@drawable/table"
@@ -659,6 +667,7 @@
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
+                                    android:id="@+id/craftingsprucequant"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
@@ -675,6 +684,7 @@
 
 
                             <TextView
+                                android:id="@+id/tabletxt"
                                 android:layout_width="120dp"
                                 android:layout_height="90dp"
                                 android:text="Table"
@@ -689,14 +699,14 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/diamond_sword"
+                    android:id="@+id/shelftop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintHorizontal_bias="0.473"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/steel_Sword"
+                    app:layout_constraintTop_toBottomOf="@+id/tabletop"
                     app:layout_constraintVertical_bias="0.060000002">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -711,6 +721,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
+                                android:id="@+id/shelfimg"
                                 android:layout_width="89dp"
                                 android:layout_height="89dp"
                                 android:scaleX="0.9"
@@ -744,12 +755,12 @@
                                     android:scaleY="0.9"
                                     android:src="@drawable/redwood"
                                     app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toStartOf="@+id/textView10"
+                                    app:layout_constraintEnd_toStartOf="@+id/craftingredwoodquant"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent" />
 
                                 <TextView
-                                    android:id="@+id/textView10"
+                                    android:id="@+id/craftingredwoodquant"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="50dp"
@@ -765,6 +776,7 @@
 
 
                             <TextView
+                                android:id="@+id/shelftxt"
                                 android:layout_width="109dp"
                                 android:layout_height="77dp"
                                 android:text="Shelf"
@@ -780,14 +792,14 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/chair"
+                    android:id="@+id/stoneswordtop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintHorizontal_bias="0.473"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/diamond_sword"
+                    app:layout_constraintTop_toBottomOf="@+id/shelftop"
                     app:layout_constraintVertical_bias="0.060000002">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -809,10 +821,10 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
-                                    android:id="@+id/oven"
+                                    android:id="@+id/stoneswordimg"
                                     android:layout_width="89dp"
                                     android:layout_height="89dp"
-                                    android:src="@drawable/oven"
+                                    android:src="@drawable/stonesword"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintHorizontal_bias="0.211"
@@ -834,7 +846,7 @@
                                     app:layout_constraintVertical_bias="0.0">
 
                                     <TextView
-                                        android:id="@+id/textView12"
+                                        android:id="@+id/craftingstonequant"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="50dp"
@@ -853,10 +865,10 @@
                                         android:layout_marginEnd="6dp"
                                         android:src="@drawable/rock__1_"
                                         app:layout_constraintBottom_toBottomOf="parent"
-                                        app:layout_constraintEnd_toStartOf="@+id/textView12"
+                                        app:layout_constraintEnd_toStartOf="@+id/craftingstonequant"
                                         app:layout_constraintHorizontal_bias="0.0"
                                         app:layout_constraintStart_toStartOf="parent"
-                                        app:layout_constraintTop_toBottomOf="@+id/textView12"
+                                        app:layout_constraintTop_toBottomOf="@+id/craftingstonequant"
                                         app:layout_constraintVertical_bias="1.0" />
 
                                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -875,9 +887,10 @@
                                 app:layout_constraintVertical_bias="0.0"/>
 
                             <TextView
-                                android:layout_width="101dp"
-                                android:layout_height="51dp"
-                                android:text="Oven"
+                                android:id="@+id/sswordtxt"
+                                android:layout_width="136dp"
+                                android:layout_height="85dp"
+                                android:text="Stone Sword"
                                 android:textSize="30sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -890,14 +903,14 @@
 
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/furnace"
+                    android:id="@+id/iswordtop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintHorizontal_bias="0.473"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/chair"
+                    app:layout_constraintTop_toBottomOf="@+id/stoneswordtop"
                     app:layout_constraintVertical_bias="0.060000002">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -919,7 +932,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <androidx.constraintlayout.widget.ConstraintLayout
-                                    android:id="@+id/constraintLayout4"
+                                    android:id="@+id/craftingironcon"
                                     android:layout_width="90dp"
                                     android:layout_height="90dp"
                                     app:layout_constraintBottom_toBottomOf="parent"
@@ -930,7 +943,7 @@
                                     app:layout_constraintVertical_bias="0.0">
 
                                     <ImageView
-                                        android:id="@+id/imageView3"
+                                        android:id="@+id/craftingiron"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginStart="2dp"
@@ -944,13 +957,13 @@
                                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                                 <TextView
-                                    android:id="@+id/textView11"
+                                    android:id="@+id/iswordtxt"
                                     android:layout_width="110dp"
                                     android:layout_height="65dp"
-                                    android:text="Iron armor"
+                                    android:text="Iron Sword"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
+                                    app:layout_constraintEnd_toStartOf="@+id/craftingironcon"
                                     app:layout_constraintHorizontal_bias="0.013"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
@@ -964,9 +977,122 @@
                                     android:layout_marginBottom="1dp"
                                     android:src="@drawable/iarmor"
                                     app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
-                                    app:layout_constraintStart_toEndOf="@+id/textView11"
+                                    app:layout_constraintEnd_toStartOf="@+id/craftingironcon"
+                                    app:layout_constraintStart_toEndOf="@+id/iswordtxt"
                                     app:layout_constraintTop_toTopOf="parent">
+
+                                </ImageView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.534"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0">
+
+                                <TextView
+                                    android:id="@+id/crafttingironquant"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="50dp"
+                                    android:text="x6"
+                                    android:textColor="#000000"
+                                    android:textSize="30sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"></TextView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ironswordtop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/stoneswordtop">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/craftingironcon"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.534"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0">
+
+                                    <ImageView
+                                        android:id="@+id/craftingiron"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="2dp"
+                                        android:src="@drawable/iron__1_"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <TextView
+                                    android:id="@+id/iswordtxt"
+                                    android:layout_width="110dp"
+                                    android:layout_height="65dp"
+                                    android:text="Iron Sword"
+                                    android:textSize="30sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/craftingironcon"
+                                    app:layout_constraintHorizontal_bias="0.013"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/ironswordimg"
+                                    android:layout_width="89dp"
+                                    android:layout_height="89dp"
+                                    android:src="@drawable/swordiron__1_"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.211"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0">
 
                                 </ImageView>
 
@@ -996,6 +1122,228 @@
 
                             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/goldswordtop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ironswordtop">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/craftinggoldcon"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.534"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0">
+
+                                    <ImageView
+                                        android:id="@+id/craftinggold"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="2dp"
+                                        android:src="@drawable/gold__1_"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <TextView
+                                    android:id="@+id/gswordtxt"
+                                    android:layout_width="110dp"
+                                    android:layout_height="65dp"
+                                    android:text="Gold Sword"
+                                    android:textSize="30sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/craftingironcon"
+                                    app:layout_constraintHorizontal_bias="0.013"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/goldswordimg"
+                                    android:layout_width="89dp"
+                                    android:layout_height="89dp"
+                                    android:src="@drawable/swordgold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.211"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0">
+
+                                </ImageView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.534"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="50dp"
+                                    android:text="x6"
+                                    android:textColor="#000000"
+                                    android:textSize="30sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"></TextView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/diamondswordtop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/goldswordtop">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/craftingdiamondcon"
+                                    android:layout_width="90dp"
+                                    android:layout_height="90dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.534"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0">
+
+                                    <ImageView
+                                        android:id="@+id/craftingdiamond"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="2dp"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginEnd="2dp"
+                                        android:src="@drawable/diamond__1_"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <TextView
+                                    android:id="@+id/dswordtxt"
+                                    android:layout_width="110dp"
+                                    android:layout_height="65dp"
+                                    android:text="Diamond Sword"
+                                    android:textSize="15sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/craftingdiamondcon"
+                                    app:layout_constraintHorizontal_bias="0.013"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0"></TextView>
+
+                                <ImageView
+                                    android:id="@+id/diamondswordimg"
+                                    android:layout_width="89dp"
+                                    android:layout_height="89dp"
+                                    android:src="@drawable/dsword"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.211"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="1.0">
+
+                                </ImageView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.534"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.0">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="50dp"
+                                    android:text="x6"
+                                    android:textColor="#000000"
+                                    android:textSize="30sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.0"></TextView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -112,7 +112,7 @@
                             android:src="@drawable/coin__1_" />
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/doortxt"
                             android:layout_width="73dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"

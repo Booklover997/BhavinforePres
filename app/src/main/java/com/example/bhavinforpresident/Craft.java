@@ -44,11 +44,14 @@ public class  Craft extends androidx.fragment.app.Fragment {
     TextView gold_text;
     TextView redwood_text;
 
-    private CardView table;
-    private CardView wood_sword;
-    private CardView iron_sword;
-    private CardView diamond_sword;
     private CardView chair;
+    private CardView door;
+    private CardView table;
+    private CardView shelf;
+    private CardView stonesword;
+    private CardView ironsword;
+    private CardView goldsword;
+    private CardView diamondsword;
 
 
     public Craft() {
@@ -94,54 +97,86 @@ public class  Craft extends androidx.fragment.app.Fragment {
         birch_text = view.findViewById(R.id.birch_text);
         spruce_text = view.findViewById(R.id.spruce_text);
         redwood_text = view.findViewById(R.id.redwood_text);
-        CardView table = view.findViewById(R.id.table);
-        CardView wood_sword = view.findViewById(R.id.wood_sword);
-        CardView iron_sword = view.findViewById(R.id.steel_Sword);
-        CardView diamond_sword = view.findViewById(R.id.diamond_sword);
-        CardView chair = view.findViewById(R.id.chair);
-
+         chair = view.findViewById(R.id.chairtop);
+         door = view.findViewById(R.id.doortop);
+         table = view.findViewById(R.id.tabletop);
+         shelf = view.findViewById(R.id.shelftop);
+         stonesword = view.findViewById(R.id.stoneswordtop);
+         ironsword = view.findViewById(R.id.ironswordtop);
+         goldsword = view.findViewById(R.id.goldswordtop);
+         diamondsword = view.findViewById(R.id.diamondswordtop);
+        
         //make change color on click for a recipe and set action
+        chair.setOnClickListener(l-> {
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
+            chair.setBackgroundColor(Color.RED);
+            actions.setDetails("chair");
+            actions.setAction("Craft");
+        });
+
+        door.setOnClickListener(l-> {
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
+                door.setBackgroundColor(Color.RED);
+            actions.setDetails("door");
+            actions.setAction("Craft");
+
+        });
+
         table.setOnClickListener(l-> {
-            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-            table.setBackgroundColor(Color.RED);
-            actions.setDetails("Table");
-            actions.setAction("Craft");
-        });
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
-        wood_sword.setOnClickListener(l-> {
-            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-                wood_sword.setBackgroundColor(Color.RED);
-            actions.setDetails("Wood_Sword");
+                table.setBackgroundColor(Color.RED);
+            actions.setDetails("table");
             actions.setAction("Craft");
 
         });
 
-        iron_sword.setOnClickListener(l-> {
-            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+        shelf.setOnClickListener(l-> {
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
-                iron_sword.setBackgroundColor(Color.RED);
-            actions.setDetails("Iron_Sword");
-            actions.setAction("Craft");
-
-        });
-
-        diamond_sword.setOnClickListener(l-> {
-            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
-
-                diamond_sword.setBackgroundColor(Color.RED);
-                actions.setDetails("Diamond_Sword");
+                shelf.setBackgroundColor(Color.RED);
+                actions.setDetails("shelf");
                 actions.setAction("Craft");
 
         });
 
-        chair.setOnClickListener(l-> {
-            resetColors(table, wood_sword, iron_sword, diamond_sword, chair);
+        stonesword.setOnClickListener(l-> {
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
-                chair.setBackgroundColor(Color.RED);
+            chair.setBackgroundColor(Color.RED);
+            actions.setDetails("Chair");
+            actions.setAction("Craft");
+            
+        
+        });
+        ironsword.setOnClickListener(l-> {
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
+
+            chair.setBackgroundColor(Color.RED);
             actions.setDetails("Chair");
             actions.setAction("Craft");
 
+
         });
+        goldsword.setOnClickListener(l-> {
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
+
+            chair.setBackgroundColor(Color.RED);
+            actions.setDetails("Chair");
+            actions.setAction("Craft");
+
+
+        });
+        diamondsword.setOnClickListener(l-> {
+            resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
+
+            chair.setBackgroundColor(Color.RED);
+            actions.setDetails("Chair");
+            actions.setAction("Craft");
+
+
+        });
+            
 
         // Start a new thread to perform database operations
         new Thread(new Runnable() {
@@ -187,13 +222,15 @@ public class  Craft extends androidx.fragment.app.Fragment {
 
         Log.d("pass", "pass");
     }
-    private void resetColors(CardView table, CardView wood_sword, CardView iron_sword, CardView diamond_sword, CardView chair) {
-        table.setBackgroundColor(Color.WHITE);
-        wood_sword.setBackgroundColor(Color.WHITE);
-        iron_sword.setBackgroundColor(Color.WHITE);
-        diamond_sword.setBackgroundColor(Color.WHITE);
-
+    private void resetColors(CardView chair, CardView door, CardView table, CardView shelf, CardView stonesword, CardView ironsword, CardView goldsword, CardView diamondsword) {
         chair.setBackgroundColor(Color.WHITE);
+        door.setBackgroundColor(Color.WHITE);
+        table.setBackgroundColor(Color.WHITE);
+        shelf.setBackgroundColor(Color.WHITE);
+        stonesword.setBackgroundColor(Color.WHITE);
+        goldsword.setBackgroundColor(Color.WHITE);
+        ironsword.setBackgroundColor(Color.WHITE);
+        diamondsword.setBackgroundColor(Color.WHITE);
     }
 
 
