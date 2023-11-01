@@ -110,14 +110,14 @@ public class  Craft extends androidx.fragment.app.Fragment {
         chair.setOnClickListener(l-> {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
             chair.setBackgroundColor(Color.RED);
-            actions.setDetails("chair");
+            actions.setDetails("Chair");
             actions.setAction("Craft");
         });
 
         door.setOnClickListener(l-> {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
                 door.setBackgroundColor(Color.RED);
-            actions.setDetails("door");
+            actions.setDetails("Door");
             actions.setAction("Craft");
 
         });
@@ -126,7 +126,7 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
                 table.setBackgroundColor(Color.RED);
-            actions.setDetails("table");
+            actions.setDetails("Table");
             actions.setAction("Craft");
 
         });
@@ -135,7 +135,7 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
                 shelf.setBackgroundColor(Color.RED);
-                actions.setDetails("shelf");
+                actions.setDetails("Shelf");
                 actions.setAction("Craft");
 
         });
@@ -144,7 +144,7 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
             chair.setBackgroundColor(Color.RED);
-            actions.setDetails("Chair");
+            actions.setDetails("Stone_Sword");
             actions.setAction("Craft");
             
         
@@ -153,7 +153,7 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
             chair.setBackgroundColor(Color.RED);
-            actions.setDetails("Chair");
+            actions.setDetails("Iron_Sword");
             actions.setAction("Craft");
 
 
@@ -162,7 +162,7 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
             chair.setBackgroundColor(Color.RED);
-            actions.setDetails("Chair");
+            actions.setDetails("Gold_Sword");
             actions.setAction("Craft");
 
 
@@ -171,7 +171,7 @@ public class  Craft extends androidx.fragment.app.Fragment {
             resetColors(chair, door, table, shelf, stonesword, ironsword, goldsword, diamondsword);
 
             chair.setBackgroundColor(Color.RED);
-            actions.setDetails("Chair");
+            actions.setDetails("Diamond_Sword");
             actions.setAction("Craft");
 
 
