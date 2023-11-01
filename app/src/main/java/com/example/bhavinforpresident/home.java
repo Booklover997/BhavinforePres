@@ -32,6 +32,7 @@ public class home extends Fragment {
     private int current_progress = 0;
     private ProgressBar progressBar;
     private Button button_start_reset;
+    private Button sell;
     private ImageButton increaseup;
     private ImageButton decreasedown;
     private TextView timer_text;
@@ -42,6 +43,7 @@ public class home extends Fragment {
     private int update_counter;
     private TextView moneytext;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class home extends Fragment {
         progressBar = view.findViewById(R.id.progressBar);
         timer_text = view.findViewById(R.id.time);
         button_start_reset = view.findViewById(R.id.button_start_reset);
+        sell = view.findViewById(R.id.sell);
         increaseup = view.findViewById(R.id.increaseup);
         decreasedown = view.findViewById(R.id.decreasedown);
         moneytext = view.findViewById(R.id.money_text);
@@ -68,11 +71,21 @@ public class home extends Fragment {
                 }
             }
         });
+        sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actions.setDetails("Nada");
+                actions.setAction("Selling");
+                sell.setBackgroundColor(Color.RED);
+                Log.d("Donkey", "DONKEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYDONKEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYDONKEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYDONKEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
+
+            }
+        });
 
         decreasedown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (millis>0 && !running) {
+                if (millis > 60000*5 && !running) {
                     millis -= 300000;
                     startTime -= 300000;
                     updateText();
@@ -83,11 +96,12 @@ public class home extends Fragment {
         increaseup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!running){
+                if (!running) {
                     millis += 300000;
                     startTime += 300000;
                     updateText();
-            }}
+                }
+            }
         });
 
 
@@ -96,9 +110,15 @@ public class home extends Fragment {
             public void run() {
                 AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").fallbackToDestructiveMigration().build();
                 Mats mats = db.MatsDao().getMatsByName("Money");
-                Log.d("money", ""+mats.quantity);
-                Log.d("MMM", ""+mats.quantity);
+                Log.d("money", "" + mats.quantity);
+                Log.d("MMM", "" + mats.quantity);
                 // Update the UI elements on the main thread
+                requireActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        moneytext.setText(""+mats.quantity);
+                    }
+                });
             }
 
         }).start();
@@ -110,8 +130,27 @@ public class home extends Fragment {
         button_start_reset.setBackgroundColor(Color.RED);
         update_counter = 0;
         running=true;
-        actions.completeAction(getActivity().getApplicationContext(),startTime);
-        //TODO: Get this outa hear
+//        actions.completeAction(getActivity().getApplicationContext(),startTime);
+//        //TODO: Get this outa hear
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").fallbackToDestructiveMigration().build();
+//                Mats mats = db.MatsDao().getMatsByName("Money");
+//                Log.d("money", ""+mats.quantity);
+//                Log.d("MMM", ""+mats.quantity);
+//
+//                // Update the UI elements on the main thread
+//                requireActivity().runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        moneytext.setText(""+mats.quantity);
+//                    }
+//                });
+//            }
+//
+//        }).start();
+
         Countdown_Timer = new CountDownTimer(millis, 100) {
             @Override
             public void onTick(long l) {
@@ -130,8 +169,25 @@ public class home extends Fragment {
             @Override
             public void onFinish() {
                 //Make sure its full when its finished
-                    progressBar.setProgress((int)startTime/100);
+                progressBar.setProgress((int)startTime/100);
                 actions.completeAction(getActivity().getApplicationContext(),startTime);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        AppDatabase db = Room.databaseBuilder(requireContext(), AppDatabase.class, "Mats").fallbackToDestructiveMigration().build();
+                        Mats mats = db.MatsDao().getMatsByName("Money");
+                        Log.d("money", ""+mats.quantity);
+                        Log.d("MMM", ""+mats.quantity);
+                        // Update the UI elements on the main thread
+                        requireActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                moneytext.setText(""+mats.quantity);
+                            }
+                        });
+                    }
+
+                }).start();
                 running =false;
 
             }

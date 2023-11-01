@@ -1184,8 +1184,8 @@
 
                                 <TextView
                                     android:id="@+id/gswordtxt"
-                                    android:layout_width="110dp"
-                                    android:layout_height="65dp"
+                                    android:layout_width="89dp"
+                                    android:layout_height="60dp"
                                     android:text="Gold Sword"
                                     android:textSize="30sp"
                                     app:layout_constraintBottom_toBottomOf="parent"
